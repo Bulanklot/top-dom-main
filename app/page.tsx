@@ -1,10 +1,9 @@
+import { MainPage } from '@/source/pages/main-page/main-page'
 
 const Page = () => {
-  return (
-      <div>
-
-      </div>
-
+  return (<>
+        <MainPage/>
+    </>
   );
 }
 
