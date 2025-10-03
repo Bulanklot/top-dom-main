@@ -3,7 +3,7 @@ import styles from './styles/styles.module.scss'
 export const SwiperSlideUI = () => {
   return (
     <div className={styles.container}>
-      <h1>Строительство домов</h1>
+      <h1 className={styles.title}>Строительство домов</h1>
       <div>
         <p>По индивидуальному или готовому проекту</p>
       </div>
