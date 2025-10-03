@@ -42,6 +42,9 @@
   li {
     display: flex;
     gap: 13px;
+    span{
+      display: block;
+    }
   }
   li:before {
     content: "";
