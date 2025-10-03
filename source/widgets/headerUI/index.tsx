@@ -6,7 +6,7 @@ import React from "react";
 export const HeaderUI: React.FC = ()=> {
   return (
     <header className={styles.container}>
-      <Image priority src={logo} alt="логотип" width={181} height={31} />
+      <Image unoptimized priority src={logo} alt="логотип" width={181} height={31} />
       <div className={styles.contacts}>
         <p>Заказать звонок</p>
         <a href="tel:+74951839288">+7 (495) 183 92 88</a>

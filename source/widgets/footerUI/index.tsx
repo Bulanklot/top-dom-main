@@ -11,7 +11,7 @@ import whatsLogo from '@/public/socials/whats.svg'
 export const FooterUI: React.FC = () => {
   return (
     <footer className={styles.container}>
-      <Image priority src={footerLogo} alt="логотип" width={181} height={31} />
+      <Image unoptimized priority src={footerLogo} alt="логотип" width={181} height={31} />
       <div className={styles.addressBlock}>
         <h3 className={styles.title}>Наши офисы</h3>
         <ul className={styles.addressList}>
@@ -29,25 +29,25 @@ export const FooterUI: React.FC = () => {
         <a href="tel:+78006000787">8(800)600-07-87</a>
       </div>
       <div className={styles.describer}>
-        <Image src={logoShirt} alt="логотип" width={89} height={22} />
+        <Image unoptimized src={logoShirt} alt="логотип" width={89} height={22} />
         <p>Все права защищены</p>
       </div>
       <div className={styles.socials}>
         <a href="https://t.me/topdom_rf" target="_blank" rel="noopener noreferrer">
-          <Image src={tgLogo} alt="телеграм" />
+          <Image unoptimized src={tgLogo} alt="телеграм" />
         </a>
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://wa.me/79274534893?text=Здравствуйте! Здравствуйте! Хочу получить консультацию по инвестициям в ТопДом"
         >
-          <Image src={whatsLogo} alt="Ватсап" />
+          <Image unoptimized src={whatsLogo} alt="Ватсап" />
         </a>
         <a href="https://youtube.com/@TOPDOM_RF" target="_blank" rel="noopener noreferrer">
-          <Image src={youtubeLogo} alt="Ютуб" />
+          <Image unoptimized src={youtubeLogo} alt="Ютуб" />
         </a>
         <a href="https://vk.com/topdomrf" target="_blank" rel="noopener noreferrer">
-          <Image src={vkLogo} alt="вконтакте" />
+          <Image unoptimized src={vkLogo} alt="вконтакте" />
         </a>
       </div>
     </footer>
