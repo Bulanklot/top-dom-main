@@ -1,0 +1,65 @@
+:root {
+  --color-bg: #f6f7f8;
+  --color-fg: rgba(0, 0, 0, 0.8);
+
+  --gradient-checkbox: linear-gradient(90deg, #2463eb 0.3%, #2186d9 50.07%, #42b3ff 99.84%);
+  --gradient-text: linear-gradient(#177cce, #24a3f9, #56ccfb);
+  --button-gradient: linear-gradient(90deg, #177cce 0.23%, #24a3f9 50.01%, #56ccfb 99.79%);
+  --main-button-gradient: linear-gradient(90deg, #2463eb 0.3%, #2186d9 50.07%, #42b3ff 99.84%);
+
+  --button-border-gradient: linear-gradient(90deg, #2463eb, #2186d9, #42b3ff);
+
+  --color-neutral1: #fff;
+  --color-neutral2: rgba(0, 0, 0, 0.56);
+  --color-neutral3: rgba(0, 0, 0, 0.45);
+  --color-neutral4: rgba(217, 217, 217, 1);
+  --color-neutral5: rgba(255, 255, 255, 0.75);
+
+  --font-size-mob-xxs: 10px;
+  --font-size-mob-xs: 12px;
+  --font-size-mob-s  :13px;
+  --font-size-mob-m: 14px;
+  --font-size-mob-l: 15px;
+  --font-size-mob-xl: 18px;
+  --font-size-mob-xxl: 24px;
+  --font-size-mob-xxxl: 35px;
+}
+
+html,
+body {
+  max-width: 100dvw;
+  overflow-x: hidden;
+  min-height: 100dvh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-fg);
+  background: var(--color-bg);
+  font-family: var(--roboto), serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-mob-s);
+}
+
+.main-container {
+  max-width: 100%;
+  flex-grow: 1;
+  margin: 0 auto;
+  display: flex;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

@@ -1,0 +1,23 @@
+.container{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-neutral1);
+  min-height: 111px;
+  align-items: end;
+  padding: 0 20px 20px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: end;
+  p{
+    color: var(--color-neutral2);
+    font-size: var(--font-size-mob-xs);
+  }
+  a{
+    font-weight: bold;
+    font-size: var(--font-size-mob-l);
+  }
+}
