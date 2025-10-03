@@ -2,7 +2,7 @@ name: Deploy Next.js to GitHub Pages
 
 on:
   push:
-    branches: [ "master" ]   # или master, если у вас master
+    branches: [ "master" ]
 
 permissions:
   contents: write

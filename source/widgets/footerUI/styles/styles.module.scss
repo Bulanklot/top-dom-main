@@ -24,11 +24,12 @@
 
 .title:before{
   content: "";
-  background-image: url("/footer/location-icon.svg");
+  background-image: url("../../../../public/footer/location-icon.svg");
   width: 20px;
   height: 20px;
   display: inline-block;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .addressList{
@@ -68,7 +69,7 @@
   }
   p:before{
     content: "";
-    background-image: url("/footer/mobile.svg");
+    background-image: url("../../../../public/footer/mobile.svg");
     width: 21px;
     height: 21px;
     display: block;
