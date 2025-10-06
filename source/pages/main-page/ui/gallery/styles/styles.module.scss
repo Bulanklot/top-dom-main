@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.cardSection{
+  width: 100%;
+ display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 12px;
+}
+
+.title{
+  font-size: var(--font-size-mob-xxl)
+}
+
+.addsBunner{
+  width: 350px;
+  height: 91px;
+  border-radius: 15px;
+  background-image: url("#{$base}/adds/add.png");
+}
+
+

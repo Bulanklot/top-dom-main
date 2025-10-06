@@ -1,0 +1,65 @@
+.container {
+  background-image:
+    url('#{$base}/title-cards-image/homeImage.png'), linear-gradient(95deg, #26adfe 22.22%, #005be5 129.04%);
+  min-height: 277px;
+  background-repeat: no-repeat;
+  border-radius: 24px;
+  background-position: left center;
+  position: relative;
+  padding: 17px 0 13px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: var(--font-size-mob-xxxl);
+  line-height: 40px;
+  font-weight: 900;
+  color: var(--color-neutral1);
+  span {
+    display: block;
+  }
+}
+
+.descriptionWrapper {
+  background-color: #107cef;
+  width: 206px;
+  height: 40px;
+  border-radius: 9px 0 0 9px;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 9px;
+}
+
+.description {
+  color: var(--color-neutral1);
+  font-size: var(--font-size-mob-s);
+  span{
+    display: block;
+  }
+}
+
+.button{
+  align-self: end;
+  margin-right: 13px;
+  width: 238px;
+  height: 43px;
+  border: none;
+ border-radius: 15px;
+  background-color: var(--color-neutral1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  span{
+    background-image: var(--gradient-text) ;
+    background-clip: text;
+    color: transparent;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
