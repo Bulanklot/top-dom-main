@@ -1,0 +1,89 @@
+.container {
+  background-color: var(--color-neutral1);
+  min-height: 314px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 20px 16px;
+}
+
+.title {
+  color:  var(--color-fg);
+  font-size: var(--font-size-mob-xl);
+  font-weight: bold;
+  align-self: start;
+}
+
+.fieldset {
+  border: none;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 30px;
+  width: 100%;
+  grid-auto-columns: min-content;
+}
+.button{
+  background: var(--button-gradient);
+  border: none;
+  outline: none;
+  color: var(--color-neutral1);
+  font-size: var(--font-size-mob-xl);
+  width: 320px;
+  height: 58px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--font-size-mob-l);
+  line-height: 20px;
+  color: var(--color-neutral3);
+  text-wrap: nowrap;
+}
+
+.radioLabel:has(.radioInput:checked) {
+  color: rgba(0, 0, 0, 0.8);
+}
+.radioInput {
+  appearance: none;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  transition: 500ms;
+  background-color: #EEF1F5;
+}
+
+.radioInput:focus{
+}
+
+.radioInput:checked {
+  background-image: var(--gradient-checkbox);
+  transition: 500ms;
+}
+
+.radioInput::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  font-size: 30px;
+  background-image: url("#{$base}/ui-icons/checked.svg");
+  background-repeat: no-repeat;
+  transition: 500ms;
+  background-position: center;
+}
+
+.radioInput:disabled {
+  opacity: 0;
+}
+.radioLabel:has(.radioInput:disabled) {
+  opacity: 0;
+}

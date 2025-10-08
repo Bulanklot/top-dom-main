@@ -1,0 +1,49 @@
+.container {
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+.dialogContent{
+  position:fixed;
+  bottom: 89px;
+  z-index: 1;
+}
+
+.navContainer {
+  min-height: 90px;
+  background: var(--color-neutral1);
+  width: 100%;
+  //position: fixed;
+  //bottom: 0;
+  //z-index: 1;
+  display: flex;
+  gap: 26px;
+  justify-content: space-between;
+  padding: 16px 43px 0;
+}
+
+.button {
+  appearance: none;
+  background-image: linear-gradient(#FFF, #FFF), var(--button-border-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: var(--font-size-mob-xl);
+  height: 32px;
+  width: 82px;
+  span{
+    background-image: var(--gradient-text);
+    color: transparent;
+    background-clip: text;
+  }
+}
+
+.buttonActive {
+  background-image: var(--main-button-gradient);
+  span{
+    color: var(--color-neutral1);
+  }
+}

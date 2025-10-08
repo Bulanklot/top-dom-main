@@ -10,6 +10,8 @@ export const SwiperUI =  () => {
      <Swiper
          modules={[Autoplay]}
      loop={true}
+         slidesPerView={1.1}
+         centeredSlides={true}
      spaceBetween={7}
          autoplay={{
              delay: 6000,
