@@ -2,17 +2,16 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import styles from './styles/styles.module.scss'
 import { Icon } from '@/source/shared/ui/icon'
-import { MortgageUi } from '@/source/shared/ui/mortgageUI'
+import { MortgageUi } from '@/source/widgets/nav-menu/ui/mortgageUI'
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
 import { useState } from 'react'
 import clsx from 'clsx'
 
 export const NavMenuUI = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   const y = useMotionValue(0)
   // const opacity = useTransform(y, [0, 200], [1, 0.5])
-
 
   const handleDragEnd = (event: any, info: any, onOpenChange: (v: boolean) => void) => {
     if (info.offset.y > 100) {
@@ -29,7 +28,7 @@ export const NavMenuUI = () => {
         <Icon icon={'burger'} />
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger asChild>
-            <button className={clsx(styles.button, open && styles.buttonActive )}>
+            <button className={clsx(styles.button, open && styles.buttonActive)}>
               <span>Ипотека</span>
             </button>
           </Dialog.Trigger>
@@ -50,7 +49,7 @@ export const NavMenuUI = () => {
                 }
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 50}}
+                transition={{ type: 'spring', stiffness: 300, damping: 50 }}
               >
                 <div className={styles.sheetHandle} />
                 <MortgageUi />

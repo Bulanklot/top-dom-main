@@ -61,7 +61,8 @@
   background-color: #EEF1F5;
 }
 
-.radioInput:focus{
+.radioInput:focus-visible{
+  outline: 2px solid var(--button-border-gradient);
 }
 
 .radioInput:checked {
