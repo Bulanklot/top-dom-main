@@ -8,9 +8,12 @@ export const GalleryUI = () => {
       <section className={styles.cardSection}>
         <VillageCard/>
         <VillageCard />
-        <VillageCard/>
-        <VillageCard/>
+
         <div className={styles.addsBunner}></div>
+          <VillageCard/>
+          <VillageCard/>
+          <VillageCard/>
+          <VillageCard/>
       </section>
     </div>
   )

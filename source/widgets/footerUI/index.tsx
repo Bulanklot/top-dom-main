@@ -7,6 +7,7 @@ import vkLogo from '@/public/socials/vk.svg'
 import youtubeLogo from '@/public/socials/youtube.svg'
 import tgLogo from '@/public/socials/tg.svg'
 import whatsLogo from '@/public/socials/whats.svg'
+import {NavMenuUI} from "@/source/widgets/nav-menu/nav-menuUI";
 
 export const FooterUI: React.FC = () => {
   return (
@@ -50,6 +51,7 @@ export const FooterUI: React.FC = () => {
           <Image unoptimized src={vkLogo} alt="вконтакте" />
         </a>
       </div>
+        <NavMenuUI/>
     </footer>
   )
 }
