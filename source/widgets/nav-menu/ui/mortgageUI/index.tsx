@@ -1,15 +1,19 @@
 'use client'
 
 import styles from './styles/styles.module.scss'
-import { useForm } from 'react-hook-form'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { MobileRectangle } from '@/source/shared/ui/icon/ui/mobile-rectangle'
 import { useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { Modal } from '@/source/shared/ui/modal'
 
+type FormValues = {
+  mortgage: 'Семейная 6%' | 'Дальневосточная 2%' | 'Сельская 3%' | 'Рыночная от 15%' | 'Военная' | 'IT 6%'
+}
+
 export const MortgageUi: React.FC = () => {
   const [openModal, setOpenModal] = useState<boolean>(false)
-  const { register, handleSubmit } = useForm({
+  const { register, handleSubmit } = useForm<FormValues>({
     mode: 'all',
     reValidateMode: 'onChange',
     defaultValues: {
@@ -17,7 +21,7 @@ export const MortgageUi: React.FC = () => {
     }
   })
 
-  const onSubmit = data => {
+  const onSubmit: SubmitHandler<FormValues> = data => {
     console.log(data)
   }
 
