@@ -2,39 +2,46 @@
   position: fixed;
   bottom: 0;
   z-index: 2;
+  min-height: 90px;
   width: 100%;
+  background: var(--color-neutral1);
+  padding: 7px 20px 0;
 }
 
-.dialogContent{
-  position:fixed;
+.dialogContent {
+  position: fixed;
   bottom: 89px;
   z-index: 1;
 }
 
 .navContainer {
-  min-height: 90px;
-  background: var(--color-neutral1);
   width: 100%;
-  //position: fixed;
-  //bottom: 0;
-  //z-index: 1;
   display: flex;
   gap: 26px;
   justify-content: space-between;
-  padding: 16px 43px 0;
+  padding: 0 20px;
+  min-height: 54px;
+  background-color: #F0F0F0;
+  align-items: center;
+  border-radius: 21px;
+  box-shadow: 0 4px 8.9px 0 rgba(98, 98, 98, 0.10) inset;
 }
 
 .button {
   appearance: none;
-  background-image: linear-gradient(#FFF, #FFF), var(--button-border-gradient);
+  background-image: linear-gradient(#fff, #fff), var(--button-border-gradient);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   border: 2px solid transparent;
+  box-shadow:
+    0 1px 1.9px 0 rgba(0, 0, 0, 0.1),
+    0 4px 4px 0 rgba(195, 195, 195, 0.18) inset;
   border-radius: 10px;
   font-size: var(--font-size-mob-xl);
   height: 32px;
   width: 82px;
-  span{
+  font-weight: bold;
+  span {
     background-image: var(--gradient-text);
     color: transparent;
     background-clip: text;
@@ -43,7 +50,7 @@
 
 .buttonActive {
   background-image: var(--main-button-gradient);
-  span{
+  span {
     color: var(--color-neutral1);
   }
 }

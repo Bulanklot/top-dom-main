@@ -13,6 +13,7 @@ export const NavMenuUI = () => {
   const y = useMotionValue(0)
   // const opacity = useTransform(y, [0, 200], [1, 0.5])
 
+
   const handleDragEnd = (event: any, info: any, onOpenChange: (v: boolean) => void) => {
     if (info.offset.y > 100) {
       animate(y, 500, { duration: 0.3 })

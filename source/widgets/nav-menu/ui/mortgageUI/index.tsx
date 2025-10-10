@@ -5,28 +5,27 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { MobileRectangle } from '@/source/shared/ui/icon/ui/mobile-rectangle'
 import { useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
-import { Modal } from '@/source/shared/ui/modal'
+import { Modal } from '@/source/shared/ui/modalUI'
+import { NumberModal } from '@/source/shared/ui/modals/number-form-modal'
 
-type FormValues = {
+export type typeFormValues = {
   mortgage: 'Семейная 6%' | 'Дальневосточная 2%' | 'Сельская 3%' | 'Рыночная от 15%' | 'Военная' | 'IT 6%'
 }
 
 export const MortgageUi: React.FC = () => {
   const [openModal, setOpenModal] = useState<boolean>(false)
-  const { register, handleSubmit } = useForm<FormValues>({
+  const { register, handleSubmit, watch } = useForm<typeFormValues>({
     mode: 'all',
-    reValidateMode: 'onChange',
     defaultValues: {
       mortgage: 'Семейная 6%'
     }
   })
 
-  const onSubmit: SubmitHandler<FormValues> = data => {
-    console.log(data)
-  }
+
+  const mortgageInfo = watch('mortgage')
 
   return (
-    <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
+    <form className={styles.container}>
       <MobileRectangle />
       <p className={styles.title}>Выберите свою ипотеку</p>
       <fieldset className={styles.fieldset}>
@@ -77,15 +76,13 @@ export const MortgageUi: React.FC = () => {
         onClick={() => {
           setOpenModal(!openModal)
         }}
-        type="submit"
+        type="button"
         className={styles.button}
       >
         Одобрить ипотеку
       </button>
       <Modal onOpenChange={setOpenModal} open={openModal}>
-        <div>
-          <div>Здесь будет модальное окно с номером телефона</div>
-        </div>
+        <NumberModal info={mortgageInfo} onClose={() => setOpenModal(false)} />
       </Modal>
     </form>
   )
