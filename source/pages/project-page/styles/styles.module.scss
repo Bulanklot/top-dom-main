@@ -1,0 +1,21 @@
+.container {
+  padding: 0 20px;
+  width: 100%;
+}
+
+.sliderContainer {
+  width: 100%;
+}
+
+.thumbsSwiper {
+  display: none;
+}
+
+.sliderImg {
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+  object-position: center;
+  vertical-align: middle;
+}
