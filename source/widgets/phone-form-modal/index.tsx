@@ -1,27 +1,31 @@
 import styles from './styles/styles.module.scss'
-import { Icon } from '@/source/shared/ui/icon'
-import { Controller, useForm } from 'react-hook-form'
-import { numberFormSchema } from '@/source/shared/ui/modals/number-form-modal/schema/schema'
+import { Icon } from '@/source/shared/ui/icons'
+import { Controller, SubmitHandler, useForm } from 'react-hook-form'
+import { numberFormSchema } from '@/source/widgets/phone-form-modal/schema/schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { PatternFormat } from 'react-number-format'
 import { typeFormValues } from '@/source/widgets/nav-menu/ui/mortgageUI'
 import { useState } from 'react'
-import { Modal } from '@/source/shared/ui/modalUI'
-import { AcceptModalContent } from '@/source/shared/ui/modals/accept-modal'
+import { AcceptModal } from '@/source/shared/ui/modals/accept-modal'
 import { ExitButton } from '@/source/shared/ui/exit-button'
+import { IconName } from '@/source/shared/ui/icons/type'
+import { z } from 'zod'
+
+type FormValues = z.infer<typeof numberFormSchema>
+
 type NumberModalProps = {
   onClose?(): void
-  info: typeFormValues | string
+  info?: typeFormValues | null
 }
 
-export const NumberModal: React.FC<NumberModalProps> = ({ onClose, info }: NumberModalProps) => {
+export const PhoneModal: React.FC<NumberModalProps> = ({ onClose, info }: NumberModalProps) => {
   const [complete, setComplete] = useState<boolean>(false)
   const {
     control,
     handleSubmit,
     formState: { errors, isValid },
     reset
-  } = useForm({
+  } = useForm<FormValues>({
     resolver: zodResolver(numberFormSchema),
     mode: 'all',
     reValidateMode: 'onChange',
@@ -30,28 +34,21 @@ export const NumberModal: React.FC<NumberModalProps> = ({ onClose, info }: Numbe
     }
   })
 
-  const onSubmit = async data => {
+  const onSubmit: SubmitHandler<FormValues> = async data => {
     console.log(data, info)
     const formData = new FormData()
     formData.append('phone', data.phone)
-    formData.append('info', info)
+    if (info?.mortgage) formData.append('info', info.mortgage)
     formData.append('act', 'order')
     reset()
     setComplete(true)
-    // try {
-    //   await fetch('/invest/send.php', {
-    //     method: 'POST',
-    //     body: formData
-    //   })
-    // } catch (error) {
-    //   console.error('Ошибка отправки формы:', error)
-    // }
   }
+
   return !complete ? (
     <div className={styles.container}>
       <div className={styles.iconsContainer}>
         <div className={styles.editWrapper}>
-          <Icon icon={'edit'} />
+          <Icon icon={IconName.Edit} />
         </div>
         <ExitButton onClose={onClose} />
       </div>
@@ -91,6 +88,6 @@ export const NumberModal: React.FC<NumberModalProps> = ({ onClose, info }: Numbe
       </form>
     </div>
   ) : (
-    <AcceptModalContent onClose={onClose} />
+    <AcceptModal onClose={onClose} />
   )
 }

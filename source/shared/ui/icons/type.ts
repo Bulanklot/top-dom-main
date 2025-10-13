@@ -1,6 +1,15 @@
 import { SVGProps } from 'react'
 
-export type IconName = 'home' | 'burger' | 'basket' | 'person' | 'exit' | 'edit' | 'logo'
+
+export enum IconName {
+  Home = 'home',
+  Burger = 'burger',
+  Basket = 'basket',
+  Person = 'person',
+  Exit = 'exit',
+  Edit = 'edit',
+  Logo = 'logo'
+}
 
 export interface IconProps extends React.SVGProps<SVGSVGElement> {
   icon: IconName
