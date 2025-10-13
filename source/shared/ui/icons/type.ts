@@ -2,7 +2,7 @@ import { SVGProps } from 'react'
 import { ArrowDownAccent } from '@/source/shared/ui/icons/ui/arrow-down-accent'
 
 
-export enum IconName {
+export const enum EIconName {
   Home = 'home',
   Burger = 'burger',
   Basket = 'basket',
@@ -14,9 +14,9 @@ export enum IconName {
 }
 
 export interface IconProps extends React.SVGProps<SVGSVGElement> {
-  icon: IconName
+  icon: EIconName
 }
 
 export type IconsType = {
-  [key in IconName]?: React.FC<SVGProps<SVGSVGElement>>
+  [key in EIconName]?: React.FC<SVGProps<SVGSVGElement>>
 }

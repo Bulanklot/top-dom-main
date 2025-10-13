@@ -1,12 +1,12 @@
 'use client'
 
 import styles from './styles/styles.module.scss'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { MobileRectangle } from '@/source/shared/ui/icons/ui/mobile-rectangle'
 import { useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { Modal } from '@/source/shared/ui/modalUI'
-import { PhoneModal} from '@/source/widgets/phone-form-modal'
+import { PhoneModal } from '@/source/widgets/phone-form-modal'
 
 export type typeFormValues = {
   mortgage: 'Семейная 6%' | 'Дальневосточная 2%' | 'Сельская 3%' | 'Рыночная от 15%' | 'Военная' | 'IT 6%'
@@ -21,8 +21,7 @@ export const MortgageUi: React.FC = () => {
     }
   })
 
-
-  const mortgageInfo = watch('mortgage');
+  const mortgageInfo = watch('mortgage')
 
   return (
     <form className={styles.container}>
@@ -82,7 +81,7 @@ export const MortgageUi: React.FC = () => {
         Одобрить ипотеку
       </button>
       <Modal onOpenChange={setOpenModal} open={openModal}>
-        <PhoneModal info={{mortgage:mortgageInfo}} onClose={() => setOpenModal(false)} />
+        <PhoneModal info={{ mortgage: mortgageInfo }} onClose={() => setOpenModal(false)} />
       </Modal>
     </form>
   )

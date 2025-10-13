@@ -6,7 +6,7 @@ import { MortgageUi } from '@/source/widgets/nav-menu/ui/mortgageUI'
 import { animate, motion, useMotionValue } from 'framer-motion'
 import { useState } from 'react'
 import clsx from 'clsx'
-import { IconName } from '@/source/shared/ui/icons/type'
+import { EIconName } from '@/source/shared/ui/icons/type'
 import Link from 'next/link'
 
 export const NavMenuUI = () => {
@@ -26,8 +26,8 @@ export const NavMenuUI = () => {
   return (
     <div className={styles.container}>
       <nav className={styles.navContainer}>
-        <Link href="/"><Icon icon={IconName.Home} /></Link>
-        <Icon icon={IconName.Burger} />
+        <Link href="/"><Icon icon={EIconName.Home} /></Link>
+        <Icon icon={EIconName.Burger} />
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger asChild>
             <button className={clsx(styles.button, open && styles.buttonActive)}>
@@ -59,8 +59,8 @@ export const NavMenuUI = () => {
             </Dialog.Content>
           </Dialog.Portal>
         </Dialog.Root>
-        <Icon icon={IconName.Basket} />
-        <Icon icon={IconName.Person} />
+        <Icon icon={EIconName.Basket} />
+        <Icon icon={EIconName.Person} />
       </nav>
     </div>
   )

@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import styles from './styles/styles.module.scss'
 import { Icon } from '@/source/shared/ui/icons'
-import { IconName } from '@/source/shared/ui/icons/type'
+import { EIconName } from '@/source/shared/ui/icons/type'
 
 interface IProjectPriceProps {
   startPrice: number
@@ -24,7 +24,7 @@ const ProjectPrice: FC<IProjectPriceProps> = props => {
         </div>
 
         <div className={styles.discountContainer}>
-          <Icon icon={IconName.ArrowDownAccent} className={styles.arrowDownAccent} />
+          <Icon icon={EIconName.ArrowDownAccent} className={styles.arrowDownAccent} />
           <span className={styles.discountPrice}>-{discountPrice} ₽</span>
         </div>
       </div>

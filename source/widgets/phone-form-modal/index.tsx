@@ -8,7 +8,7 @@ import { typeFormValues } from '@/source/widgets/nav-menu/ui/mortgageUI'
 import { useState } from 'react'
 import { AcceptModal } from '@/source/shared/ui/modals/accept-modal'
 import { ExitButton } from '@/source/shared/ui/exit-button'
-import { IconName } from '@/source/shared/ui/icons/type'
+import { EIconName } from '@/source/shared/ui/icons/type'
 import { z } from 'zod'
 
 type FormValues = z.infer<typeof numberFormSchema>
@@ -48,7 +48,7 @@ export const PhoneModal: React.FC<NumberModalProps> = ({ onClose, info }: Number
     <div className={styles.container}>
       <div className={styles.iconsContainer}>
         <div className={styles.editWrapper}>
-          <Icon icon={IconName.Edit} />
+          <Icon icon={EIconName.Edit} />
         </div>
         <ExitButton onClose={onClose} />
       </div>

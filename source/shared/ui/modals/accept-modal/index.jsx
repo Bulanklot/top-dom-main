@@ -2,13 +2,14 @@ import styles from './styles/styles.module.scss'
 import { ExitButton } from '../../exit-button'
 import { ICONS } from '../../icons/icons'
 import { Icon } from '../../icons'
-import { IconName } from '../../icons/type'
+import { EIconName } from '../../icons/type'
+
 
 export const AcceptModal = ({ onClose }) => {
   return (
     <div className={styles.container}>
       <div className={styles.headerContainer}>
-        <Icon icon={IconName.Logo} />
+        <Icon icon={EIconName.Logo} />
         <ExitButton onClose={onClose} />
       </div>
       <p className={styles.description}>
