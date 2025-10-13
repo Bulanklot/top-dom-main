@@ -27,10 +27,6 @@ const ProjectSlider: FC<IProjectSliderProps> = props => {
   return (
     <div className={styles.sliderContainer}>
       <Swiper
-        style={{
-          '--swiper-navigation-color': '#fff',
-          '--swiper-pagination-color': '#fff'
-        }}
         loop={true}
         spaceBetween={10}
         navigation={true}
