@@ -7,6 +7,7 @@ import { animate, motion, useMotionValue } from 'framer-motion'
 import { useState } from 'react'
 import clsx from 'clsx'
 import { IconName } from '@/source/shared/ui/icons/type'
+import Link from 'next/link'
 
 export const NavMenuUI = () => {
   const [open, setOpen] = useState(false)
@@ -25,7 +26,7 @@ export const NavMenuUI = () => {
   return (
     <div className={styles.container}>
       <nav className={styles.navContainer}>
-        <Icon icon={IconName.Home} />
+        <Link href="/"><Icon icon={IconName.Home} /></Link>
         <Icon icon={IconName.Burger} />
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger asChild>
