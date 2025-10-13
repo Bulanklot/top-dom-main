@@ -1,5 +1,5 @@
 import styles from './styles/style.module.scss'
-import { typeModalProps } from '@/source/shared/ui/modal/types/types'
+import { typeModalProps } from '@/source/shared/ui/modalUI/types/types'
 import * as Dialog from '@radix-ui/react-dialog'
 
 export const Modal = (props: typeModalProps) => {

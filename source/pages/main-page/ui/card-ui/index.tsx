@@ -10,6 +10,7 @@ import testImage3 from '@/public/test-vilages-image/Фото дома.png'
 import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import Link from 'next/link'
 
 export const VillageCard = () => {
   return (
@@ -35,10 +36,12 @@ export const VillageCard = () => {
         <p>Хит продаж</p>
         <Image src={basketIcon} alt="" unoptimized />
       </div>
-      <div className={styles.contentWrapper}>
-        <p>От 11 786 860 ₽</p>
-        <p>Площадь дома: 172 м²</p>
-      </div>
+      <Link href="/project">
+        <div className={styles.contentWrapper}>
+          <p>От 11 786 860 ₽</p>
+          <p>Площадь дома: 172 м²</p>
+        </div>
+      </Link>
     </div>
   )
 }
