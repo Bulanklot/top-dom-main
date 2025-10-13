@@ -16,6 +16,7 @@
   --color-neutral5: rgba(255, 255, 255, 0.75);
   --color-neutral6: rgba(217, 217, 217, 0.35);
   --color-neutral7: rgba(133, 133, 133, 1);
+  --color-neutral8: rgba(0, 0, 0, 0.3);
 
   --font-size-mob-xxs: 10px;
   --font-size-mob-xs: 12px;
@@ -54,6 +55,8 @@ body {
   max-width: 100%;
   flex-grow: 1;
   display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 * {
   box-sizing: border-box;
