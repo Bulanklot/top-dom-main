@@ -6,6 +6,7 @@ import {PersonIcon} from "@/source/shared/ui/icons/ui/person";
 import { ExitIcon } from '@/source/shared/ui/icons/ui/exit'
 import { Edit } from '@/source/shared/ui/icons/ui/edit'
 import {HeaderLogo} from "@/source/shared/ui/icons/ui/header-logo";
+import { MobileRectangle } from '@/source/shared/ui/icons/ui/mobile-rectangle'
 
 export const ICONS: IconsType = {
     home: HomeIcon,
@@ -14,5 +15,6 @@ export const ICONS: IconsType = {
     person: PersonIcon,
     exit: ExitIcon,
     edit: Edit,
-    logo: HeaderLogo
+    logo: HeaderLogo,
+    rectangle: MobileRectangle
 }

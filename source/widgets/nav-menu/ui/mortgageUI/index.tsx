@@ -4,9 +4,10 @@ import styles from './styles/styles.module.scss'
 import { useForm } from 'react-hook-form'
 import { MobileRectangle } from '@/source/shared/ui/icons/ui/mobile-rectangle'
 import { useState } from 'react'
-import * as Dialog from '@radix-ui/react-dialog'
 import { Modal } from '@/source/shared/ui/modalUI'
 import { PhoneModal } from '@/source/widgets/phone-form-modal'
+import { Icon } from '@/source/shared/ui/icons'
+import { EIconName } from '@/source/shared/ui/icons/type'
 
 export type typeFormValues = {
   mortgage: 'Семейная 6%' | 'Дальневосточная 2%' | 'Сельская 3%' | 'Рыночная от 15%' | 'Военная' | 'IT 6%'
@@ -25,7 +26,7 @@ export const MortgageUi: React.FC = () => {
 
   return (
     <form className={styles.container}>
-      <MobileRectangle />
+      <Icon icon={EIconName.Rectangle}/>
       <p className={styles.title}>Выберите свою ипотеку</p>
       <fieldset className={styles.fieldset}>
         <label className={styles.radioLabel}>

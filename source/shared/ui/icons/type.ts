@@ -10,7 +10,8 @@ export const enum EIconName {
   Exit = 'exit',
   Edit = 'edit',
   Logo = 'logo',
-  ArrowDownAccent= 'arrowDownAccent'
+  ArrowDownAccent= 'arrowDownAccent',
+  Rectangle = 'rectangle',
 }
 
 export interface IconProps extends React.SVGProps<SVGSVGElement> {

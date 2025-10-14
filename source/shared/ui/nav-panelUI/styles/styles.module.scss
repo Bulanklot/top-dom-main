@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-neutral1);
+  align-items: center;
+  padding: 11px 0;
+  gap: 24px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+
+.navPanel {
+  width: 165px;
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  padding-left: 11px;
+  padding-top: 10px;
+  p {
+    font-size: var(--font-size-mob-20px);
+    font-weight: 700;
+  }
+}
+
+.oneFloor {
+  background-image:
+    url('/nav-panels-images/one-floor.avif'), linear-gradient(90deg, rgba(248, 209, 148, 1), rgba(230, 158, 75, 1));
+}
+
+.twoFloor {
+  background-image:
+    url('/nav-panels-images/two-floor.avif'), linear-gradient(360deg, rgba(255, 255, 255, 1), rgba(227, 227, 227, 1));
+}
+
+.investments {
+  background-image: url('/nav-panels-images/investments.avif'),linear-gradient(92deg, #2992D4 -8.53%, #55BFFF 100.18%);
+  color: var(--color-neutral1);
+}
+
+.stock {
+  background-image: url('/nav-panels-images/stock.avif');
+  color:rgba(0, 48, 143, 1);
+}
