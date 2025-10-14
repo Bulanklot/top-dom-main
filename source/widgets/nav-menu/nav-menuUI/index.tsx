@@ -8,7 +8,7 @@ import { useState } from 'react'
 import clsx from 'clsx'
 import { EIconName } from '@/source/shared/ui/icons/type'
 import Link from 'next/link'
-import { BurgerMenu } from '@/source/shared/ui/nav-panelUI'
+import { BurgerMenu } from '@/source/widgets/nav-menu/nav-menuUI/burger-menu'
 
 export const NavMenuUI = () => {
   const [open, setOpen] = useState(false)
