@@ -6,14 +6,13 @@ export const GalleryUI = () => {
     <div className={styles.container}>
       <h2 className={styles.title}>Подобрали для вас</h2>
       <section className={styles.cardSection}>
-        <VillageCard/>
         <VillageCard />
-
+        <VillageCard />
         <div className={styles.addsBunner}></div>
-          <VillageCard/>
-          <VillageCard/>
-          <VillageCard/>
-          <VillageCard/>
+        <VillageCard />
+        <VillageCard />
+        <VillageCard />
+        <VillageCard />
       </section>
     </div>
   )
