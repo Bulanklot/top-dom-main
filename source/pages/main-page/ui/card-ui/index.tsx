@@ -11,8 +11,59 @@ import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import Link from 'next/link'
+import { HTMLAttributes, useEffect, useState } from 'react'
+import clsx from 'clsx'
+import { EVT, LS_KEY } from '@/source/pages/basket-page/basketGallery'
 
-export const VillageCard = () => {
+export type TVillageProps = HTMLAttributes<HTMLDivElement> & {
+  onBasket?: boolean
+}
+export const VillageCard = ({ onBasket }: TVillageProps) => {
+  const [count, setCount] = useState(0)
+  // это будет огромный технический долг, с виджетом корзины
+  useEffect(() => {
+    const read = () => {
+      const n = Number(localStorage.getItem(LS_KEY) || 0)
+      setCount(Number.isFinite(n) && n > 0 ? n : 0)
+    }
+    read()
+
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === LS_KEY) read()
+    }
+    const onLocal = (e: Event) => {
+      const next = (e as CustomEvent<number>).detail
+      setCount(Number(next) || 0)
+    }
+
+    window.addEventListener('storage', onStorage)
+    window.addEventListener(EVT, onLocal)
+    return () => {
+      window.removeEventListener('storage', onStorage)
+      window.removeEventListener(EVT, onLocal)
+    }
+  }, [])
+
+  const setAndBroadcast = (next: number) => {
+    localStorage.setItem(LS_KEY, String(next))
+    window.dispatchEvent(new CustomEvent(EVT, { detail: next }))
+    setCount(next)
+  }
+
+  // ADD внутри карточки
+  const addToBasket = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    e.stopPropagation() // чтобы <Link> не сработал
+    setAndBroadcast(count + 1)
+  }
+
+  // REMOVE внутри карточки
+  const removeFromBasket = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setAndBroadcast(Math.max(0, count - 1))
+  }
+
   return (
     <div className={styles.container}>
       <Link href="/project">
@@ -35,9 +86,15 @@ export const VillageCard = () => {
         </Swiper>
         <div className={styles.optionsWrapper}>
           <p>Хит продаж</p>
-          <Image src={basketIcon} alt="" unoptimized />
+          <button
+            disabled={onBasket}
+            onClick={e => addToBasket(e)}
+            className={clsx(styles.basketButton, onBasket && styles.disabled)}
+          >
+            <Image src={basketIcon} alt="" unoptimized />
+          </button>
         </div>
-
+        {onBasket && <button className={styles.deleteButton} onClick={e => removeFromBasket(e)}></button>}
         <div className={styles.contentWrapper}>
           <p>От 11 786 860 ₽</p>
           <p>Площадь дома: 172 м²</p>
