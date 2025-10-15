@@ -1,4 +1,3 @@
-import style from "./styles/styles.module.scss";
 import { BurgerMenu } from '@/source/pages/categories-page/ui/burger-menu'
 
 

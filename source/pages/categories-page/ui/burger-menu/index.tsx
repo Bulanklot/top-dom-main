@@ -1,7 +1,5 @@
 import styles from './styles/styles.module.scss'
 import clsx from 'clsx'
-import { EIconName } from '@/source/shared/ui/icons/type'
-import { Icon } from '@/source/shared/ui/icons'
 
 export const BurgerMenu = () => {
   return (

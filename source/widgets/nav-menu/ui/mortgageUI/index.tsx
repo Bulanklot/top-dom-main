@@ -2,7 +2,6 @@
 
 import styles from './styles/styles.module.scss'
 import { useForm } from 'react-hook-form'
-import { MobileRectangle } from '@/source/shared/ui/icons/ui/mobile-rectangle'
 import { useState } from 'react'
 import { Modal } from '@/source/shared/ui/modalUI'
 import { PhoneModal } from '@/source/widgets/phone-form-modal'
@@ -15,7 +14,7 @@ export type typeFormValues = {
 
 export const MortgageUi: React.FC = () => {
   const [openModal, setOpenModal] = useState<boolean>(false)
-  const { register, handleSubmit, watch } = useForm<typeFormValues>({
+  const { register, watch } = useForm<typeFormValues>({
     mode: 'all',
     defaultValues: {
       mortgage: 'Семейная 6%'

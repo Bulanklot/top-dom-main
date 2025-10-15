@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import '@app/styles/globals.scss'
 import { roboto } from '@/source/app/fonts'
-import {HeaderUI} from "@/source/widgets/headerUI";
-import {FooterUI} from "@/source/widgets/footerUI";
+import { HeaderUI } from '@/source/widgets/headerUI'
+import { NavMenuUI } from '@/source/widgets/nav-menu/nav-menuUI'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,11 +15,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ru">
+    <html lang="ru" data-scroll-behavior="smooth">
       <body className={`${roboto.variable}`}>
-      <HeaderUI/>
+        <HeaderUI />
         <div className="main-container">{children}</div>
-      <FooterUI/>
+        <NavMenuUI />
       </body>
     </html>
   )

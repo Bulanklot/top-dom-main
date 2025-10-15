@@ -7,7 +7,6 @@ import vkLogo from '@/public/socials/vk.svg'
 import youtubeLogo from '@/public/socials/youtube.svg'
 import tgLogo from '@/public/socials/tg.svg'
 import whatsLogo from '@/public/socials/whats.svg'
-import {NavMenuUI} from "@/source/widgets/nav-menu/nav-menuUI";
 
 export const FooterUI: React.FC = () => {
   return (
@@ -16,8 +15,16 @@ export const FooterUI: React.FC = () => {
       <div className={styles.addressBlock}>
         <h3 className={styles.title}>Наши офисы</h3>
         <ul className={styles.addressList}>
-          <li><p>г. Москва, Пресненская набережная, д. 8, стр. 1. <span>Город столиц, “Башня Москва”</span></p></li>
-          <li><p>г. Москва, Дзержинское шоссе, вл 7/7, <span>Котельники (Малоэтажная страна)</span></p></li>
+          <li>
+            <p>
+              г. Москва, Пресненская набережная, д. 8, стр. 1. <span>Город столиц, “Башня Москва”</span>
+            </p>
+          </li>
+          <li>
+            <p>
+              г. Москва, Дзержинское шоссе, вл 7/7, <span>Котельники (Малоэтажная страна)</span>
+            </p>
+          </li>
           <li>МО, городской округ Истра, КП “Рига Лайф”</li>
           <li>МО, городской округ Истра, КП “Алексино Форест Клаб”</li>
           <li>МО, городской округ Щелково, КП “Наследие”</li>
@@ -51,7 +58,6 @@ export const FooterUI: React.FC = () => {
           <Image unoptimized src={vkLogo} alt="вконтакте" />
         </a>
       </div>
-        <NavMenuUI/>
     </footer>
   )
 }

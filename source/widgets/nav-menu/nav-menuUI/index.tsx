@@ -3,20 +3,22 @@ import * as Dialog from '@radix-ui/react-dialog'
 import styles from './styles/styles.module.scss'
 import { Icon } from '@/source/shared/ui/icons'
 import { MortgageUi } from '@/source/widgets/nav-menu/ui/mortgageUI'
-import { animate, motion, useMotionValue } from 'framer-motion'
+import { animate, motion, PanInfo, useMotionValue } from 'framer-motion'
 import { useState } from 'react'
 import clsx from 'clsx'
 import { EIconName } from '@/source/shared/ui/icons/type'
 import Link from 'next/link'
-import { BurgerMenu } from '@/source/pages/categories-page/ui/burger-menu'
 
 export const NavMenuUI = () => {
   const [open, setOpen] = useState(false)
 
   const y = useMotionValue(0)
-  // const opacity = useTransform(y, [0, 200], [1, 0.5])
 
-  const handleDragEnd = (event: any, info: any, onOpenChange: (v: boolean) => void) => {
+  const handleDragEnd = (
+    event: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo,
+    onOpenChange: (v: boolean) => void
+  ) => {
     if (info.offset.y > 100) {
       animate(y, 500, { duration: 0.3 }).then(() => setOpen(false))
       setTimeout(() => onOpenChange(false), 200)
@@ -30,9 +32,9 @@ export const NavMenuUI = () => {
         <Link href="/">
           <Icon icon={EIconName.Home} />
         </Link>
-          <Link href="/categories">
+        <Link href="/categories">
           <Icon icon={EIconName.Burger} />
-          </Link>
+        </Link>
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger asChild>
             <button className={clsx(styles.button, open && styles.buttonActive)}>
