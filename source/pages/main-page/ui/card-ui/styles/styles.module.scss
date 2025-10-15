@@ -61,3 +61,26 @@
     align-items: center;
   }
 }
+
+.basketButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.disabled{
+  opacity: 0;
+}
+
+.deleteButton{
+  border-radius: 9px;
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  background-position: center top;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  background-image: url("#{$base}/test-vilages-image/card-exit-button.svg");
+}

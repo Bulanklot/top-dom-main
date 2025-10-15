@@ -24,4 +24,7 @@
   background-image: url('#{$base}/adds/add.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  @include bp.desktop{
+    display:none;
+  }
 }

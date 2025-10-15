@@ -10,9 +10,11 @@ import { EIconName } from '@/source/shared/ui/icons/type'
 import Link from 'next/link'
 
 export const NavMenuUI = () => {
+
   const [open, setOpen] = useState(false)
 
   const y = useMotionValue(0)
+
 
   const handleDragEnd = (
     event: MouseEvent | TouchEvent | PointerEvent,
@@ -66,7 +68,7 @@ export const NavMenuUI = () => {
             </Dialog.Content>
           </Dialog.Portal>
         </Dialog.Root>
-        <Icon icon={EIconName.Basket} />
+          <Link href="/basket"><Icon icon={EIconName.Basket}/></Link>
         <Icon icon={EIconName.Person} />
       </nav>
     </div>
