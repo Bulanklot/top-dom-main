@@ -2,8 +2,9 @@ import { FC } from "react";
 import styles from "./styles/styles.module.scss";
 import ProjectSlider from "./project-slider";
 import ProjectPrice from "./project-price";
+import projectSlide1 from "@/public/project/slider/project-slide-1.jpg";
 
-const IMAGES = ["/project/slider/project-slide-1.jpg", "/project/slider/project-slide-1.jpg", "/project/slider/project-slide-1.jpg"]
+const IMAGES = [projectSlide1.src, projectSlide1.src, projectSlide1.src]
 
 export const ProjectPage: FC = () => {
     return (
