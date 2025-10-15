@@ -1,17 +1,10 @@
 .container {
   display: flex;
-  flex-direction: column;
-  background-color: var(--color-neutral1);
   align-items: center;
   padding: 11px 0;
-  gap: 24px;
-  outline: none;
-}
-
-.categories {
-  display: flex;
-  flex-wrap: wrap;
   gap: 18px;
+  outline: none;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -31,20 +24,23 @@
 
 .oneFloor {
   background-image:
-    url('#{$base}/nav-panels-images/one-floor.avif'), linear-gradient(90deg, rgba(248, 209, 148, 1), rgba(230, 158, 75, 1));
+    url('#{$base}/nav-panels-images/one-floor.avif'),
+    linear-gradient(90deg, rgba(248, 209, 148, 1), rgba(230, 158, 75, 1));
 }
 
 .twoFloor {
   background-image:
-    url('#{$base}/nav-panels-images/two-floor.avif'), linear-gradient(360deg, rgba(255, 255, 255, 1), rgba(227, 227, 227, 1));
+    url('#{$base}/nav-panels-images/two-floor.avif'),
+    linear-gradient(360deg, rgba(255, 255, 255, 1), rgba(227, 227, 227, 1));
 }
 
 .investments {
-  background-image: url('#{$base}/nav-panels-images/investments.avif'),linear-gradient(92deg, #2992D4 -8.53%, #55BFFF 100.18%);
+  background-image:
+    url('#{$base}/nav-panels-images/investments.avif'), linear-gradient(92deg, #2992d4 -8.53%, #55bfff 100.18%);
   color: var(--color-neutral1);
 }
 
 .stock {
   background-image: url('#{$base}/nav-panels-images/stock.avif');
-  color:rgba(0, 48, 143, 1);
+  color: rgba(0, 48, 143, 1);
 }

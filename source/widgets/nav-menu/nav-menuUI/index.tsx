@@ -8,11 +8,10 @@ import { useState } from 'react'
 import clsx from 'clsx'
 import { EIconName } from '@/source/shared/ui/icons/type'
 import Link from 'next/link'
-import { BurgerMenu } from '@/source/widgets/nav-menu/nav-menuUI/burger-menu'
+import { BurgerMenu } from '@/source/pages/categories-page/ui/burger-menu'
 
 export const NavMenuUI = () => {
   const [open, setOpen] = useState(false)
-  const [burgerMenu, setBurgerMenu] = useState(false)
 
   const y = useMotionValue(0)
   // const opacity = useTransform(y, [0, 200], [1, 0.5])
@@ -31,31 +30,9 @@ export const NavMenuUI = () => {
         <Link href="/">
           <Icon icon={EIconName.Home} />
         </Link>
-        <Dialog.Root open={burgerMenu} onOpenChange={setBurgerMenu}>
-          <Dialog.Trigger asChild>
-            <Icon icon={EIconName.Burger} />
-          </Dialog.Trigger>
-          <Dialog.Portal>
-            <Dialog.Title></Dialog.Title>
-            <Dialog.Description></Dialog.Description>
-            <Dialog.Content asChild className={styles.dialogContent}>
-              <motion.div
-                className={styles.sheetContent}
-                style={{ y }}
-                drag="y"
-                dragConstraints={{ top: 0 }}
-                dragElastic={0.2}
-                onDragEnd={(e, info) => handleDragEnd(e, info, setBurgerMenu)}
-                initial={{ y: '100%' }}
-                animate={{ y: 0 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 50 }}
-              >
-                <div className={styles.sheetHandle} />
-                <BurgerMenu />
-              </motion.div>
-            </Dialog.Content>
-          </Dialog.Portal>
-        </Dialog.Root>
+          <Link href="/categories">
+          <Icon icon={EIconName.Burger} />
+          </Link>
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger asChild>
             <button className={clsx(styles.button, open && styles.buttonActive)}>
