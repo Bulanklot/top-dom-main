@@ -24,15 +24,19 @@ const ProjectSlider: FC<IProjectSliderProps> = props => {
 
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null)
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(window.location.href)
+    alert('Ссылка на проект скопирована')
+  }
+
   return (
     <div className={styles.sliderContainer}>
       <Swiper
         loop={true}
-        spaceBetween={10}
-        navigation={true}
+        spaceBetween={0}
+        navigation={false}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2"
       >
         {images.map((image, index) => (
           <SwiperSlide key={`${image}-${index}`}>
@@ -58,6 +62,11 @@ const ProjectSlider: FC<IProjectSliderProps> = props => {
           ))}
         </Swiper>
       </div>
+
+      <button className={styles.backButton} onClick={() => window.history.back()}></button>
+
+      {/* TODO: раскоментировать, когда будет бэк и https  */}
+      {/* <button className={styles.shareButton} onClick={handleCopy}></button> */}
     </div>
   )
 }
