@@ -8,13 +8,14 @@ import { useState } from 'react'
 import clsx from 'clsx'
 import { EIconName } from '@/source/shared/ui/icons/type'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export const NavMenuUI = () => {
+  const pathname = usePathname()
 
+  // Анимация ипотеки
   const [open, setOpen] = useState(false)
-
   const y = useMotionValue(0)
-
 
   const handleDragEnd = (
     event: MouseEvent | TouchEvent | PointerEvent,
@@ -28,14 +29,15 @@ export const NavMenuUI = () => {
       animate(y, 0, { type: 'spring', stiffness: 300, damping: 30 })
     }
   }
+
   return (
     <div className={styles.container}>
       <nav className={styles.navContainer}>
         <Link href="/">
-          <Icon icon={EIconName.Home} />
+          <Icon icon={EIconName.Home} className={clsx(styles.nav, pathname === '/' && styles.activeNav)} />
         </Link>
         <Link href="/categories">
-          <Icon icon={EIconName.Burger} />
+          <Icon icon={EIconName.Burger} className={clsx(styles.nave, pathname === '/categories' && styles.activeNav)} />
         </Link>
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger asChild>
@@ -68,7 +70,9 @@ export const NavMenuUI = () => {
             </Dialog.Content>
           </Dialog.Portal>
         </Dialog.Root>
-          <Link href="/basket"><Icon icon={EIconName.Basket}/></Link>
+        <Link href="/basket">
+          <Icon icon={EIconName.Basket} className={clsx(styles.nav, pathname === '/basket' && styles.activeNav)} />
+        </Link>
         <Icon icon={EIconName.Person} />
       </nav>
     </div>

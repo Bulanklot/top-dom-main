@@ -2,17 +2,20 @@
   position: fixed;
   bottom: 0;
   z-index: 2;
-  min-height: 90px;
+  min-height: 69px;
   width: 100%;
   background: var(--color-neutral1);
-  padding: 7px 20px 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dialogContent {
   position: fixed;
-  bottom: 89px;
+  bottom: 69px;
   z-index: 1;
-  outline:none;
+  outline: none;
 }
 
 .navContainer {
@@ -22,10 +25,10 @@
   justify-content: space-between;
   padding: 0 20px;
   min-height: 54px;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
   align-items: center;
   border-radius: 21px;
-  box-shadow: 0 4px 8.9px 0 rgba(98, 98, 98, 0.10) inset;
+  box-shadow: 0 4px 8.9px 0 rgba(98, 98, 98, 0.1) inset;
 }
 
 .button {
@@ -41,7 +44,6 @@
   font-size: var(--font-size-mob-xl);
   height: 32px;
   width: 82px;
-  font-weight: bold;
   span {
     background-image: var(--gradient-text);
     color: transparent;
@@ -53,5 +55,14 @@
   background-image: var(--main-button-gradient);
   span {
     color: var(--color-neutral1);
+  }
+}
+
+.activeNav {
+  path {
+    fill: url(#Gradient-1);
+  }
+  rect {
+    fill: url(#Gradient-1);
   }
 }
