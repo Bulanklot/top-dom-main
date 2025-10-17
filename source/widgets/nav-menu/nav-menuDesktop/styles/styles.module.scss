@@ -1,22 +1,19 @@
 .container {
-  position: fixed;
-  bottom: 0;
-  z-index: 2;
-  min-height: 69px;
-  width: 100%;
-  background: var(--color-neutral1);
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @include bp.desktop{
-    display: none;
+  display: none;
+  @include bp.desktop {
+    min-height: 54px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
   }
 }
 
 .dialogContent {
   position: fixed;
-  bottom: 69px;
+  top: 69px;
   z-index: 1;
   outline: none;
   width: 100%;
@@ -62,11 +59,11 @@
   }
 }
 
-.activeNav{
+.activeNav {
   path {
-    fill: url(#mobile);
+    fill: url(#desktop);
   }
   rect {
-    fill: url(#mobile);
+    fill: url(#desktop);
   }
 }

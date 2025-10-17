@@ -25,7 +25,7 @@ export const MortgageUi: React.FC = () => {
 
   return (
     <form className={styles.container}>
-      <Icon icon={EIconName.Rectangle}/>
+      <Icon icon={EIconName.Rectangle} />
       <p className={styles.title}>Выберите свою ипотеку</p>
       <fieldset className={styles.fieldset}>
         <label className={styles.radioLabel}>

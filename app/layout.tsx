@@ -3,6 +3,7 @@ import '@app/styles/globals.scss'
 import { roboto } from '@/source/app/fonts'
 import { HeaderUI } from '@/source/widgets/headerUI'
 import { NavMenuUI } from '@/source/widgets/nav-menu/nav-menuUI'
+import { FooterUIDesktop } from '@/source/widgets/footerUI-desktop'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,6 +21,7 @@ export default function RootLayout({
         <HeaderUI />
         <div className="main-container">{children}</div>
         <NavMenuUI />
+      <FooterUIDesktop/>
       </body>
     </html>
   )

@@ -7,20 +7,29 @@
   gap: 15px;
   flex-direction: column;
   position: relative;
+  @include bp.desktop {
+    width: 269px;
+    height: 330px;
+  }
 }
 
 .swiper {
   width: 100%;
   border-radius: 15px 15px 0 0;
- --swiper-pagination-bottom: 0px;
+  --swiper-pagination-bottom: 0px;
   padding-bottom: 10px;
-  --swiper-pagination-theme-color: #F0F0F0;
- --swiper-pagination-bullet-inactive-color: #F0F0F0;
+  --swiper-pagination-theme-color: #f0f0f0;
+  --swiper-pagination-bullet-inactive-color: #f0f0f0;
   --swiper-pagination-bullet-inactive-opacity: 1;
-  --swiper-pagination-color: #C3C3C3;
+  --swiper-pagination-color: #c3c3c3;
   --swiper-pagination-bullet-size: 7px;
   --swiper-pagination-bullet-height: 7px;
   --swiper-pagination-bullet-horizontal-gap: 3px;
+  @include bp.desktop{
+    --swiper-pagination-bullet-size: 11px;
+    --swiper-pagination-bullet-height: 11px;
+    padding-bottom: 20px;
+  }
 }
 
 .contentWrapper {
@@ -28,13 +37,21 @@
   flex-direction: column;
   padding-left: 8px;
   gap: 3px;
-  p:nth-child(1){
+  p:nth-child(1) {
     font-size: var(--font-size-mob-l);
     font-weight: bold;
-    color: #2EC700;
+    color: #2ec700;
   }
-  p:nth-child(2){
+  p:nth-child(2) {
     color: var(--color-neutral2);
+  }
+  @include bp.desktop{
+    p:nth-child(1){
+      font-size: var(--font-size-xl);
+    }
+    p:nth-child(2){
+      font-size: var(--font-size-m);
+    }
   }
 }
 
@@ -43,12 +60,11 @@
   padding: 0 5px;
   bottom: 70px;
   width: 100%;
-
   display: flex;
   justify-content: space-between;
   z-index: 1;
 
-  p{
+  p {
     background-color: var(--accent-color);
     color: var(--color-neutral1);
     border-radius: 6px;
@@ -60,6 +76,15 @@
     justify-content: center;
     align-items: center;
   }
+
+  @include bp.desktop{
+    bottom: 92px;
+    p{
+      font-size: var(--font-size-s);
+      width: 102px;
+      height: 29px;
+    }
+  }
 }
 
 .basketButton {
@@ -69,11 +94,11 @@
   padding: 0;
 }
 
-.disabled{
+.disabled {
   opacity: 0;
 }
 
-.deleteButton{
+.deleteButton {
   border-radius: 9px;
   position: absolute;
   top: 8px;
@@ -82,5 +107,18 @@
   z-index: 1;
   width: 30px;
   height: 30px;
-  background-image: url("#{$base}/test-vilages-image/card-exit-button.svg");
+  background-image: url('#{$base}/test-vilages-image/card-exit-button.svg');
+}
+
+.image {
+  @include bp.desktop {
+    width: 269px;
+    height: 217px;
+  }
+}
+
+
+.basketIcon{
+  width: 50px;
+  height: 50px;
 }

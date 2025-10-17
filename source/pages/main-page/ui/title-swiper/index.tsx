@@ -2,15 +2,16 @@
 import styles from './styles/styles.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
+import 'swiper/css/effect-coverflow'
 import { BunnerSlideUI } from '@/source/pages/main-page/ui/swiper-slide-ui'
-import { Autoplay } from 'swiper/modules'
+import { Autoplay, EffectCoverflow } from 'swiper/modules'
 
 export const SwiperUI = () => {
   return (
     <Swiper
-      modules={[Autoplay]}
+      modules={[Autoplay, EffectCoverflow]}
       loop={true}
-      slidesPerView={1.1}
+      effect="coverflow"
       centeredSlides={true}
       spaceBetween={7}
       autoplay={{
@@ -18,29 +19,47 @@ export const SwiperUI = () => {
         disableOnInteraction: false,
         pauseOnMouseEnter: true
       }}
+      coverflowEffect={{
+        rotate: 0,
+        stretch: 0,
+        depth: 0,
+        modifier: 1,
+        slideShadows: false,
+        scale: 0.95
+      }}
+      breakpoints={{
+        0: {
+          slidesPerView: 1.2,
+          spaceBetween: 7
+        },
+        1024: {
+          slidesPerView: 1.4,
+          spaceBetween: 26
+        }
+      }}
       className={styles.container}
     >
-      <SwiperSlide>
+      <SwiperSlide className={styles.slide}>
         {' '}
         <BunnerSlideUI />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className={styles.slide}>
         {' '}
         <BunnerSlideUI />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className={styles.slide}>
         {' '}
         <BunnerSlideUI />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className={styles.slide}>
         {' '}
         <BunnerSlideUI />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className={styles.slide}>
         {' '}
         <BunnerSlideUI />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className={styles.slide}>
         {' '}
         <BunnerSlideUI />
       </SwiperSlide>

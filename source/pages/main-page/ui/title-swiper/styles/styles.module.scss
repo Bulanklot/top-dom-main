@@ -1,3 +1,14 @@
 .container {
   width: 100%;
+  max-width: 100dv;
+  margin: 0 auto;
 }
+
+
+.slide{
+  width: 100%;
+  //@include bp.desktop{
+  //  min-width: 660px;
+  //}
+}
+

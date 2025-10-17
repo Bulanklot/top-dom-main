@@ -3,41 +3,34 @@ import * as Dialog from '@radix-ui/react-dialog'
 import styles from './styles/styles.module.scss'
 import { Icon } from '@/source/shared/ui/icons'
 import { MortgageUi } from '@/source/widgets/nav-menu/ui/mortgageUI'
-import { animate, motion, PanInfo, useMotionValue } from 'framer-motion'
+import { motion, PanInfo } from 'framer-motion'
 import { useState } from 'react'
 import clsx from 'clsx'
 import { EIconName } from '@/source/shared/ui/icons/type'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-export const NavMenuUI = () => {
+export const NavMenuDesktop = () => {
   const pathname = usePathname()
-
   // Анимация ипотеки
   const [open, setOpen] = useState(false)
-  const y = useMotionValue(0)
-
-  const handleDragEnd = (
-    event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo,
-    onOpenChange: (v: boolean) => void
-  ) => {
-    if (info.offset.y > 100) {
-      animate(y, 500, { duration: 0.3 }).then(() => setOpen(false))
-      setTimeout(() => onOpenChange(false), 200)
-    } else {
-      animate(y, 0, { type: 'spring', stiffness: 300, damping: 30 })
-    }
-  }
 
   return (
     <div className={styles.container}>
       <nav className={styles.navContainer}>
         <Link href="/">
-          <Icon id={"mobile"} icon={EIconName.Home} className={clsx( pathname === '/' && styles.activeNav)} />
+          <Icon
+            icon={EIconName.Home}
+            id={'desktop'}
+            className={clsx(styles.nav, pathname === '/' && styles.activeNav)}
+          />
         </Link>
         <Link href="/categories">
-          <Icon id={"mobile"} icon={EIconName.Burger} className={clsx(pathname === '/categories' && styles.activeNav)} />
+          <Icon
+            id={'desktop'}
+            icon={EIconName.Burger}
+            className={clsx(styles.nave, pathname === '/categories' && styles.activeNav)}
+          />
         </Link>
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger asChild>
@@ -51,17 +44,15 @@ export const NavMenuUI = () => {
 
             <Dialog.Content asChild className={styles.dialogContent}>
               <motion.div
-                style={{ y }}
                 drag="y"
-                dragConstraints={{ top: 0 }}
-                dragElastic={0.2}
-                onDragEnd={(e, info) =>
-                  handleDragEnd(e, info, () => {
-                    setOpen(false)
-                  })
-                }
-                initial={{ y: '100%' }}
+                dragConstraints={{ bottom: 0 }}
+                dragElastic={0.1}
+                onDragEnd={(_, info: PanInfo) => {
+                  if (info.offset.y < -80) setOpen(false)
+                }}
+                initial={{ y: '-100%' }}
                 animate={{ y: 0 }}
+                exit={{ y: '-100%' }}
                 transition={{ type: 'spring', stiffness: 300, damping: 50 }}
               >
                 <div className={styles.sheetHandle} />
@@ -71,9 +62,13 @@ export const NavMenuUI = () => {
           </Dialog.Portal>
         </Dialog.Root>
         <Link href="/basket">
-          <Icon id={"mobile"} icon={EIconName.Basket} className={clsx(styles.nav, pathname === '/basket' && styles.activeNav)} />
+          <Icon
+            id={'desktop'}
+            icon={EIconName.Basket}
+            className={clsx(styles.nav, pathname === '/basket' && styles.activeNav)}
+          />
         </Link>
-        <Icon id={"mobile"} icon={EIconName.Person} />
+        <Icon icon={EIconName.Person} />
       </nav>
     </div>
   )
