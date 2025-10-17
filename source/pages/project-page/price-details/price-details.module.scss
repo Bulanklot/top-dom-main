@@ -1,0 +1,151 @@
+// #region price-details
+.accordionRoot {
+  margin-top: 14px;
+  padding: 10px 14px;
+  padding-bottom: 18px;
+
+  background-color: var(--color-neutral1);
+  border-radius: 15px;
+}
+
+.accordionTrigger {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  background-color: var(--color-neutral1);
+  text-align: left;
+}
+
+.triggerContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.accordionChevron {
+  width: 48px;
+  height: 48px;
+
+  color: var(--color-neutral8);
+}
+
+.price {
+  display: block;
+  margin-bottom: 5px;
+
+  font-size: var(--font-size-mob-xl);
+  color: var(--color-fg);
+}
+
+.priceTitle {
+  display: block;
+  margin-bottom: 8px;
+
+  font-size: var(--font-size-mob-l);
+  color: var(--color-neutral2);
+}
+
+.priceBar {
+  display: flex;
+  height: 6px;
+  border-radius: 3px;
+
+  & > .barRed {
+    width: 51px;
+    height: 100%;
+    background-color: #fd4d17;
+  }
+  & > .barGreen {
+    width: 98px;
+    height: 100%;
+    background-color: #1ca215;
+  }
+  & > .barOrange {
+    width: 71px;
+    height: 100%;
+    background-color: #ffa600;
+  }
+  & > .barYellow {
+    width: 67px;
+    height: 100%;
+    background-color: #fde600;
+  }
+  & > .barPurple {
+    width: calc(100% - 51px - 98px - 71px - 67px);
+    height: 100%;
+    background-color: #8731ff;
+  }
+}
+
+.accordionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+
+  margin-top: 31px;
+}
+
+.accordionList {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.accordionItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordionItemLeft {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.accordionItemLeftText {
+  max-width: 169px;
+  color: var(--color-neutral2);
+}
+
+.accordionItemRight {
+  min-width: 57px;
+  text-wrap: nowrap;
+
+  color: var(--color-neutral2);
+}
+
+.accordionItemIcon {
+  width: 33px;
+  height: 33px;
+
+  border-radius: 50%;
+  background-size: 19px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.price1 {
+  background-color: #fd4d17;
+  background-image: url('#{$base}/ui-icons/price_item1.svg');
+}
+.price2 {
+  background-color: #1ca215;
+  background-image: url('#{$base}/ui-icons/price_item2.svg');
+}
+.price3 {
+  background-color: #ffa600;
+  background-image: url('#{$base}/ui-icons/price_item3.svg');
+}
+.price4 {
+  background-color: #fde600;
+  background-image: url('#{$base}/ui-icons/price_item4.svg');
+}
+.price5 {
+  background-color: #8731ff;
+  background-image: url('#{$base}/ui-icons/price_item5.svg');
+}
+// #endregion
