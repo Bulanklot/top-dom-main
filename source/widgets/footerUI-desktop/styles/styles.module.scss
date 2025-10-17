@@ -1,35 +1,52 @@
+.footer{
+  display:none;
+  @include bp.desktop {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(23, 124, 206, 1) 0%, rgba(36, 163, 249, 1) 49.87%, rgba(86, 204, 251, 1) 100%);
+    padding: 42px 0 56px;
+    min-height: 696px;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
 .container {
-  background: linear-gradient(90deg, #0043d3 -49.99%, #24a3f9 49.87%, #b3e9ff 163.98%);
-  color: var(--color-neutral1);
-  min-height: 725px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  padding: 26px 20px 110px;
+display: none;
+
+  @include bp.desktop{
+    color: var(--color-neutral1);
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
 }
 
 .addressBlock {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  align-self: start;
 }
 
 .title{
-  font-size: var(--font-size-mob-xl);
+  font-size: var(--font-size-xl);
   display: flex;
   gap: 7px;
   margin-left: -4px;
+
 }
 
 .title:before{
   content: "";
   background-image: url("../../../../public/footer/location-icon.svg");
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   display: inline-block;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .addressList{
@@ -37,19 +54,19 @@
   flex-direction: column;
   gap:17px;
   list-style-type: none;
-  font-size: var(--font-size-mob-xs);
+  font-size: var(--font-size-s);
   line-height: 18px;
   li {
     display: flex;
-    gap: 13px;
+    gap: 16px;
     span{
       display: block;
     }
   }
   li:before {
     content: "";
-    min-width: 8px;
-    height: 8px;
+    min-width: 13px;
+    height: 13px;
     display: block;
     background-color: var(--color-neutral1);
     border-radius: 50%;
@@ -60,33 +77,35 @@
 .contacts{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 13px;
   align-self: start;
   margin-left: -4px;
   padding-top: 3px;
   p{
-    font-size: var(--font-size-mob-xl);
+    font-size: var(--font-size-xl);
     font-weight: bold;
     display: flex;
-    gap: 3px;
+    align-items: center;
+    gap: 11px;
   }
   p:before{
     content: "";
     background-image: url("../../../../public/footer/mobile.svg");
-    width: 21px;
-    height: 21px;
+    width: 22px;
+    height: 22px;
     display: block;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: auto;
+    background-size: cover;
   }
   a{
-    font-size: var(--font-size-mob-xxl);
-    padding-left: 24px;
+    font-size: var(--font-size-xl);
+    padding-left: 35px;
   }
 }
 
 .describer{
+  align-self: center;
   display: flex;
   flex-direction: column;
   gap:9px;
@@ -103,4 +122,34 @@
   display: flex;
   flex-direction: row;
   gap: 18px;
+  align-self: end;
+  img{
+    width: 42px;
+    height: 42px;
+  }
+}
+.mainFooter{
+  display:none;
+
+}
+
+.contentWrapper{
+  display: flex;
+  gap: 130px;
+}
+
+.footerLogo{
+  width: 181px;
+  height: auto;
+  display: block;
+  @include bp.desktop{
+    width: 203px;
+    height: auto;
+  }
+}
+
+.contactsWrapper{
+  gap: 36px;
+  display: flex;
+  flex-direction: column;
 }

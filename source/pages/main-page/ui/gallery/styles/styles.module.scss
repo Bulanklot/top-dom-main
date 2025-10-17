@@ -3,6 +3,10 @@
   flex-direction: column;
   gap: 25px;
   padding: 0 20px;
+  @include bp.desktop{
+    align-items: center;
+    gap: 30px;
+  }
 }
 
 .cardSection {
@@ -11,10 +15,19 @@
   flex-wrap: wrap;
   row-gap: 12px;
   column-gap: 8px;
+  align-items: center;
+  justify-content: start;
+  @include bp.desktop{
+    column-gap: 21px;
+    row-gap: 24px;
+  }
 }
 
 .title {
   font-size: var(--font-size-mob-xxl);
+  @include bp.desktop{
+    font-size:var(--font-size-xxxl);
+  }
 }
 
 .addsBunner {
@@ -24,7 +37,14 @@
   background-image: url('#{$base}/adds/add.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  @media  (width>= 400px) {
+    display: none;
+  }
   @include bp.desktop{
     display:none;
   }
 }
+
+
+

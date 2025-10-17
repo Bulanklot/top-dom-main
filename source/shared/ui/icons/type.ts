@@ -1,5 +1,6 @@
 import { SVGProps } from 'react'
 
+
 export const enum EIconName {
   Home = 'home',
   Burger = 'burger',
@@ -9,7 +10,11 @@ export const enum EIconName {
   Edit = 'edit',
   Logo = 'logo',
   ArrowDownAccent = 'arrowDownAccent',
-  Rectangle = 'rectangle'
+  Rectangle = 'rectangle',
+  TgIconHeader = 'tgIconHeader',
+  YoutubeIconHeader = 'youtubeIconHeader',
+  WhatsappIconHeader = 'whatsappIconHeader',
+  VkIconHeader = 'vkIconHeader',
 }
 
 export interface IconProps extends React.SVGProps<SVGSVGElement> {

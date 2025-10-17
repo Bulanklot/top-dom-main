@@ -18,6 +18,7 @@
   --color-neutral7: rgba(133, 133, 133, 1);
   --color-neutral8: rgba(0, 0, 0, 0.3);
 
+  --font-size-mob-xxxs: 9px;
   --font-size-mob-xxs: 10px;
   --font-size-mob-xs: 12px;
   --font-size-mob-s: 13px;
@@ -27,6 +28,16 @@
   --font-size-mob-xxl: 24px;
   --font-size-mob-xxxl: 35px;
   --font-size-mob-20px: 20px;
+
+  --font-size-xxs: 12px;
+  --font-size-xs: 13px;
+  --font-size-s: 15px;
+  --font-size-m: 18px;
+  --font-size-l: 20px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 33px;
+  --font-size-xxxl: 35px;
+  --font-size-xxxxl: 70px;
 }
 
 html,
@@ -58,6 +69,9 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  @include bp.desktop {
+    padding-top: 96px;
+  }
 }
 * {
   box-sizing: border-box;

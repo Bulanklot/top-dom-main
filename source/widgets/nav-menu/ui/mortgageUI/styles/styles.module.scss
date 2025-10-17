@@ -6,6 +6,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 11px 20px 16px;
+  width: 100%;
+  @include bp.desktop{
+   align-items: center;
+  }
 }
 
 .title {
@@ -13,6 +17,10 @@
   font-size: var(--font-size-mob-xl);
   font-weight: bold;
   align-self: start;
+  @include bp.desktop{
+    font-size:var(--font-size-xl);
+    align-self: center;
+  }
 }
 
 .fieldset {
@@ -22,6 +30,11 @@
   gap: 30px;
   width: 100%;
   grid-auto-columns: min-content;
+  @include bp.desktop{
+   grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: min-content min-content min-content;
+    justify-content: center;
+  }
 }
 .button {
   background: var(--button-gradient);
