@@ -8,7 +8,7 @@ import youtubeLogo from '@/public/socials/youtube.svg'
 import tgLogo from '@/public/socials/tg.svg'
 import whatsLogo from '@/public/socials/whats.svg'
 
-export const FooterUI: React.FC = () => {
+export const FooterUIMobile: React.FC = () => {
   return (
     <footer className={styles.container}>
       <Image unoptimized priority src={footerLogo} alt="логотип" width={181} height={31} />

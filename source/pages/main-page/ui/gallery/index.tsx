@@ -13,6 +13,8 @@ export const GalleryUI = () => {
         <VillageCard />
         <VillageCard />
         <VillageCard />
+        <VillageCard />
+        <VillageCard />
       </section>
     </div>
   )

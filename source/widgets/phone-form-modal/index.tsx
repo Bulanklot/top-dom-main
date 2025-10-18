@@ -13,12 +13,12 @@ import { z } from 'zod'
 
 type FormValues = z.infer<typeof numberFormSchema>
 
-type NumberModalProps = {
+type PhoneModalProps = {
   onClose?(): void
-  info?: typeFormValues | null
+  info?: typeFormValues | string
 }
 
-export const PhoneModal: React.FC<NumberModalProps> = ({ onClose, info }: NumberModalProps) => {
+export const PhoneModal: React.FC<PhoneModalProps> = ({ onClose, info }: PhoneModalProps) => {
   const [complete, setComplete] = useState<boolean>(false)
   const {
     control,
@@ -38,7 +38,11 @@ export const PhoneModal: React.FC<NumberModalProps> = ({ onClose, info }: Number
     console.log(data, info)
     const formData = new FormData()
     formData.append('phone', data.phone)
-    if (info?.mortgage) formData.append('info', info.mortgage)
+    if (typeof info === 'string') {
+      formData.append('info', info)
+    } else if (info && 'mortgage' in info) {
+      formData.append('info', info.mortgage)
+    }
     formData.append('act', 'order')
     reset()
     setComplete(true)

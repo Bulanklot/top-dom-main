@@ -65,23 +65,23 @@ export const VillageCard = ({ onBasket }: TVillageProps) => {
   }
 
   return (
-    <div className={styles.container}>
-      <Link href="/project">
+    <Link href="/project">
+      <div className={styles.container}>
         <Swiper className={styles.swiper} modules={[Pagination]} pagination={{ clickable: false }} loop>
           <SwiperSlide>
-            <Image src={homeImage} alt="" unoptimized />
+            <Image className={styles.image} src={homeImage} alt="" unoptimized />
           </SwiperSlide>
           <SwiperSlide>
-            <Image src={testImage} alt="" unoptimized />
+            <Image className={styles.image} src={testImage} alt="" unoptimized />
           </SwiperSlide>
           <SwiperSlide>
-            <Image src={testImage2} alt="" unoptimized />
+            <Image className={styles.image} src={testImage2} alt="" unoptimized />
           </SwiperSlide>
           <SwiperSlide>
-            <Image src={testImage3} alt="" unoptimized />
+            <Image className={styles.image} src={testImage3} alt="" unoptimized />
           </SwiperSlide>
           <SwiperSlide>
-            <Image src={testImage} alt="" unoptimized />
+            <Image className={styles.image} src={testImage} alt="" unoptimized />
           </SwiperSlide>
         </Swiper>
         <div className={styles.optionsWrapper}>
@@ -91,7 +91,7 @@ export const VillageCard = ({ onBasket }: TVillageProps) => {
             onClick={e => addToBasket(e)}
             className={clsx(styles.basketButton, onBasket && styles.disabled)}
           >
-            <Image src={basketIcon} alt="" unoptimized />
+            <Image className={styles.basketIcon}  src={basketIcon} alt="" unoptimized />
           </button>
         </div>
         {onBasket && <button className={styles.deleteButton} onClick={e => removeFromBasket(e)}></button>}
@@ -99,7 +99,7 @@ export const VillageCard = ({ onBasket }: TVillageProps) => {
           <p>От 11 786 860 ₽</p>
           <p>Площадь дома: 172 м²</p>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   )
 }

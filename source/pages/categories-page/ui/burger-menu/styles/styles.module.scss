@@ -20,6 +20,13 @@
     font-size: var(--font-size-mob-20px);
     font-weight: 700;
   }
+  @include bp.desktop{
+    width: 270px;
+    height: 330px;
+    p{
+      font-size: var(--font-size-xxl);
+    }
+  }
 }
 
 .oneFloor {
