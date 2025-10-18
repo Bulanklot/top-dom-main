@@ -1,11 +1,18 @@
+"use client"
+
 import * as Accordion from '@radix-ui/react-accordion'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import styles from './price-details.module.scss'
 import { Content, Trigger } from '@/source/shared/ui/accordion'
 import clsx from 'clsx'
+import { Modal } from '@/source/shared/ui/modalUI'
+import { PriceDetailsModal } from '@/source/widgets/price-detail-form-modal'
 
-const PriceDetails: FC = () => (
+const PriceDetails: FC = () => {
+  const [openModal, setOpenModal] = useState(false)
+
+  return (
   <Accordion.Root className={styles.accordionRoot} type="single" defaultValue="20 000 000 ₽" collapsible>
     <Accordion.Item className="AccordionItem" value="item-1">
       <Trigger className={styles.accordionTrigger}>
@@ -66,10 +73,21 @@ const PriceDetails: FC = () => (
               <span className={styles.accordionItemRight}>6.3 млн ₽</span>
             </li>
           </ul>
+          <button
+            onClick={() => {
+              setOpenModal(!openModal)
+            }}
+            type="button"
+            className={styles.button}
+          >Получить смету</button>
         </div>
+        
+        <Modal onOpenChange={setOpenModal} open={openModal}>
+        <PriceDetailsModal onClose={() => setOpenModal(false)} />
+      </Modal>
       </Content>
     </Accordion.Item>
   </Accordion.Root>
-)
+)}
 
 export default PriceDetails

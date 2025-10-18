@@ -148,4 +148,16 @@
   background-color: #8731ff;
   background-image: url('#{$base}/ui-icons/price_item5.svg');
 }
+
+.button {
+  background: var(--button-gradient);
+  border: none;
+  outline: none;
+  color: var(--color-neutral1);
+  font-size: var(--font-size-mob-xl);
+  width: 100%;
+  height: 58px;
+  border-radius: 12px;
+  font-weight: 600;
+}
 // #endregion

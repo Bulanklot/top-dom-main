@@ -18,7 +18,7 @@ type NumberModalProps = {
   info?: typeFormValues | null
 }
 
-export const PhoneModal: React.FC<NumberModalProps> = ({ onClose, info }: NumberModalProps) => {
+export const PriceDetailsModal: React.FC<NumberModalProps> = ({ onClose, info }: NumberModalProps) => {
   const [complete, setComplete] = useState<boolean>(false)
   const {
     control,
@@ -40,8 +40,10 @@ export const PhoneModal: React.FC<NumberModalProps> = ({ onClose, info }: Number
     formData.append('phone', data.phone)
     if (info?.mortgage) formData.append('info', info.mortgage)
     formData.append('act', 'order')
+
     reset()
     setComplete(true)
+
     try {
       await fetch("/send.php", {
         method: "POST",
@@ -62,7 +64,7 @@ export const PhoneModal: React.FC<NumberModalProps> = ({ onClose, info }: Number
       </div>
       <div className={styles.titleWrapper}>
         <h4 className={styles.title}>Заполните номер телефона</h4>
-        <p className={styles.description}>И мы свяжемся с вами для подбора ипотечной программы.</p>
+        <p className={styles.description}>И мы свяжемся с вами по поводу сметы.</p>
       </div>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputWrapper}>
