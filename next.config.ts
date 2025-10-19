@@ -6,7 +6,8 @@ const repo = 'top-dom-main'
 
 const nextConfig: NextConfig = {
   output: 'export', 
-  basePath: isProd ? `/${repo}` : '',
+  // basePath: isProd ? `/${repo}` : '',
+  basePath: isProd ? `` : '',
   images: { unoptimized: true },
   sassOptions: {
     includePaths: [path.join(__dirname, 'source/app/styles')],
