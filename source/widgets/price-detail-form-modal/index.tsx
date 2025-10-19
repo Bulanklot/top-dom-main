@@ -18,7 +18,7 @@ type NumberModalProps = {
   constructor?: IFormValues | null
 }
 
-export const PriceDetailsModal: React.FC<NumberModalProps> = ({ onClose, constructor }: NumberModalProps) => {
+export const PriceDetailsModal: React.FC<NumberModalProps> = ({ onClose, constructor }) => {
   const [complete, setComplete] = useState<boolean>(false)
   const {
     control,
