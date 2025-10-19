@@ -24,10 +24,10 @@ const ProjectSlider: FC<IProjectSliderProps> = props => {
 
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null)
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(window.location.href)
-    alert('Ссылка на проект скопирована')
-  }
+  // const handleCopy = () => {
+  //   navigator.clipboard.writeText(window.location.href)
+  //   alert('Ссылка на проект скопирована')
+  // }
 
   return (
     <div className={styles.sliderContainer}>
