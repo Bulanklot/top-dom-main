@@ -5,7 +5,8 @@ const isProd = process.env.NODE_ENV === 'production'
 const repo = 'top-dom-main'
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // TODO: uncomment when ready to use generateStaticParams
+  // output: 'export', 
   basePath: isProd ? `/${repo}` : '',
   images: { unoptimized: true },
   sassOptions: {

@@ -25,7 +25,7 @@
   --swiper-pagination-bullet-size: 7px;
   --swiper-pagination-bullet-height: 7px;
   --swiper-pagination-bullet-horizontal-gap: 3px;
-  @include bp.desktop{
+  @include bp.desktop {
     --swiper-pagination-bullet-size: 11px;
     --swiper-pagination-bullet-height: 11px;
     padding-bottom: 20px;
@@ -45,11 +45,11 @@
   p:nth-child(2) {
     color: var(--color-neutral2);
   }
-  @include bp.desktop{
-    p:nth-child(1){
+  @include bp.desktop {
+    p:nth-child(1) {
       font-size: var(--font-size-xl);
     }
-    p:nth-child(2){
+    p:nth-child(2) {
       font-size: var(--font-size-m);
     }
   }
@@ -77,9 +77,9 @@
     align-items: center;
   }
 
-  @include bp.desktop{
+  @include bp.desktop {
     bottom: 92px;
-    p{
+    p {
       font-size: var(--font-size-s);
       width: 102px;
       height: 29px;
@@ -111,14 +111,14 @@
 }
 
 .image {
+  object-fit: cover;
   @include bp.desktop {
     width: 269px;
     height: 217px;
   }
 }
 
-
-.basketIcon{
+.basketIcon {
   width: 50px;
   height: 50px;
 }

@@ -10,15 +10,16 @@ import { AcceptModal } from '@/source/shared/ui/modals/accept-modal'
 import { ExitButton } from '@/source/shared/ui/exit-button'
 import { EIconName } from '@/source/shared/ui/icons/type'
 import { z } from 'zod'
+import { IFormValues } from '@/source/pages/project-page/constructor'
 
 type FormValues = z.infer<typeof numberFormSchema>
 
 type NumberModalProps = {
   onClose?(): void
-  info?: typeFormValues | null
+  constructor?: IFormValues | null
 }
 
-export const PriceDetailsModal: React.FC<NumberModalProps> = ({ onClose, info }: NumberModalProps) => {
+export const PriceDetailsModal: React.FC<NumberModalProps> = ({ onClose, constructor }: NumberModalProps) => {
   const [complete, setComplete] = useState<boolean>(false)
   const {
     control,
@@ -35,22 +36,28 @@ export const PriceDetailsModal: React.FC<NumberModalProps> = ({ onClose, info }:
   })
 
   const onSubmit: SubmitHandler<FormValues> = async data => {
-    console.log(data, info)
+    console.log(data, constructor)
     const formData = new FormData()
     formData.append('phone', data.phone)
-    if (info?.mortgage) formData.append('info', info.mortgage)
+    if (constructor) {
+      formData.append('floor', constructor.floor)
+      formData.append('sqr', constructor.sqr)
+      formData.append('walls', constructor.walls)
+      formData.append('facade', constructor.facade)
+      formData.append('finishing', constructor.finishing)
+    }
     formData.append('act', 'order')
 
     reset()
     setComplete(true)
 
     try {
-      await fetch("/send.php", {
-        method: "POST",
-        body: formData,
-      });
+      await fetch('/send.php', {
+        method: 'POST',
+        body: formData
+      })
     } catch (error) {
-      console.error("Ошибка отправки формы:", error);
+      console.error('Ошибка отправки формы:', error)
     }
   }
 
@@ -64,7 +71,7 @@ export const PriceDetailsModal: React.FC<NumberModalProps> = ({ onClose, info }:
       </div>
       <div className={styles.titleWrapper}>
         <h4 className={styles.title}>Заполните номер телефона</h4>
-        <p className={styles.description}>И мы свяжемся с вами по поводу сметы.</p>
+        <p className={styles.description}>И мы свяжемся с вами по поводу цен.</p>
       </div>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputWrapper}>

@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={`${roboto.variable}`}>
         <HeaderUI />
         <div className="main-container">{children}</div>
-        <NavMenuUI />
+        {/* <NavMenuUI /> */}
       <FooterUIDesktop/>
       </body>
     </html>
