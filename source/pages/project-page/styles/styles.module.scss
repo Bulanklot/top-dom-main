@@ -7,6 +7,19 @@
 .sliderContainer {
   width: 100%;
   position: relative;
+
+  @include bp.desktop {
+    display: flex;
+    gap: 34px;
+
+    max-width: 724px;
+    height: 616px;
+  }
+
+  @include bp.desktop-1200 {
+    max-width: 798px;
+    height: 500px;
+  }
 }
 
 .thumbsSwiper {
@@ -38,6 +51,10 @@
   background-repeat: no-repeat;
 
   z-index: 2;
+
+  @include bp.desktop {
+    display: none;
+  }
 }
 
 .shareButton {
@@ -72,6 +89,10 @@
   background-color: var(--color-neutral1);
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
+
+  @include bp.desktop {
+    width: 359px;
+  }
 }
 
 .square {
@@ -92,6 +113,10 @@
   margin-bottom: 9px;
 
   font-size: 26px;
+
+  @include bp.desktop {
+    font-size: var(--font-size-xxl);
+  }
 }
 
 .oldPrice {
@@ -105,6 +130,12 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
+  margin-bottom: 30px;
+
+  @include bp.desktop {
+    flex-direction: column;
+  }
 }
 
 .discountContainer {
@@ -124,3 +155,50 @@
   height: 16px;
 }
 // #endregion
+
+// #region project-buttons
+.greenButton {
+  padding: 20px 40px;
+  width: 100%;
+  background-color: var(--accent-color);
+  border-radius: 12px;
+
+  font-size: 16px;
+  color: var(--color-neutral1);
+
+  @include bp.desktop {
+    width: 321px;
+    border-radius: 16px;
+
+    font-size: 22px;
+  }
+}
+
+// #endregion
+
+.accordionList {
+  @include bp.desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  @include bp.desktop-1200 {
+    width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 48px;
+  }
+}
+
+.projectContainer {
+  @include bp.desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  @include bp.desktop-1200 {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 38px;
+  }
+}

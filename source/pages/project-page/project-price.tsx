@@ -5,6 +5,7 @@ import { EIconName } from '@/source/shared/ui/icons/type'
 import { FC } from 'react'
 import styles from './styles/styles.module.scss'
 import { FormattedPrice } from '@/source/shared/ui/formatted-price'
+import ProjectButtons from './project-buttons'
 
 interface IProjectPriceProps {
   startPrice: number
@@ -22,15 +23,23 @@ const ProjectPrice: FC<IProjectPriceProps> = props => {
       </span>
       <div className={styles.priceContainer}>
         <div className={styles.priceCol}>
-          <strong className={styles.startPrice}>От <FormattedPrice value={startPrice} /> ₽</strong>
-          <span className={styles.oldPrice}><FormattedPrice value={oldPrice} /> ₽</span>
+          <strong className={styles.startPrice}>
+            От <FormattedPrice value={startPrice} /> ₽
+          </strong>
+          <span className={styles.oldPrice}>
+            <FormattedPrice value={oldPrice} /> ₽
+          </span>
         </div>
 
         <div className={styles.discountContainer}>
           <Icon icon={EIconName.ArrowDownAccent} className={styles.arrowDownAccent} />
-          <span className={styles.discountPrice}>-<FormattedPrice value={discountPrice} /> ₽</span>
+          <span className={styles.discountPrice}>
+            -<FormattedPrice value={discountPrice} /> ₽
+          </span>
         </div>
       </div>
+
+      <ProjectButtons />
     </div>
   )
 }

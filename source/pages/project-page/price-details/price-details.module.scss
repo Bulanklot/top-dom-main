@@ -6,6 +6,13 @@
 
   background-color: var(--color-neutral1);
   border-radius: 15px;
+
+  @include bp.desktop {
+    flex-basis: 49%;
+    max-width: 49%;
+    min-height: 86px;
+    margin: 0;
+  }
 }
 
 .accordionTrigger {
@@ -110,6 +117,10 @@
 .accordionItemLeftText {
   max-width: 169px;
   color: var(--color-neutral2);
+
+  @include bp.desktop {
+    max-width: 379px;
+  }
 }
 
 .accordionItemRight {
@@ -159,5 +170,10 @@
   height: 58px;
   border-radius: 12px;
   font-weight: 600;
+
+  @include bp.desktop {
+    margin: 0 auto;
+    width: 320px;
+  }
 }
 // #endregion

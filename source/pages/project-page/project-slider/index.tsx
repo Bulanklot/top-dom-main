@@ -5,7 +5,7 @@ import { FC, useState } from 'react'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 
 // import required modules
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
+import { FreeMode, Navigation, Thumbs, Autoplay } from 'swiper/modules'
 import Image from 'next/image'
 
 import styles from '../styles/styles.module.scss'
@@ -35,8 +35,12 @@ const ProjectSlider: FC<IProjectSliderProps> = props => {
         loop={true}
         spaceBetween={0}
         navigation={false}
+        autoplay={{
+          delay: 3000, // Set delay to 3000ms (3 seconds)
+          disableOnInteraction: false // Continue autoplay even after user interaction
+        }}
         thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
+        modules={[FreeMode, Navigation, Thumbs, Autoplay]}
       >
         {images.map((image, index) => (
           <SwiperSlide key={`${image}-${index}`}>

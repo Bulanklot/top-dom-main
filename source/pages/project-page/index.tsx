@@ -4,6 +4,7 @@ import Constructor from './constructor'
 import PriceDetails from './price-details'
 import ProjectPrice from './project-price'
 import ProjectSlider from './project-slider'
+import styles from './styles/styles.module.scss'
 
 type Project = {
   id: string
@@ -20,10 +21,15 @@ export const ProjectPage: FC<IProjectPageProps> = props => {
 
   return (
     <>
-      <ProjectSlider images={project.images} />
-      <ProjectPrice startPrice={19500000} oldPrice={20500000} discountPrice={500000} />
-      <PriceDetails />
-      <Constructor />
+      <div className={styles.projectContainer}>
+        <ProjectSlider images={project.images} />
+        <ProjectPrice startPrice={19500000} oldPrice={20500000} discountPrice={500000} />
+      </div>
+
+      <div className={styles.accordionList}>
+        <PriceDetails />
+        <Constructor />
+      </div>
 
       <GalleryUI />
     </>

@@ -7,6 +7,13 @@
 
   background-color: var(--color-neutral1);
   border-radius: 15px;
+
+  @include bp.desktop {
+    flex-basis: 49%;
+    max-width: 49%;
+    min-height: 86px;
+    margin: 0;
+  }
 }
 
 .accordionTrigger {
@@ -84,6 +91,10 @@
   display: flex;
   flex-direction: column;
   gap: 19px;
+
+  @include bp.desktop {
+    flex-direction: row;
+  }
 }
 
 .radioLabel {
@@ -96,6 +107,10 @@
   text-wrap: nowrap;
 
   cursor: pointer;
+
+  @include bp.desktop {
+    flex-basis: 33%;
+  }
 }
 
 .radioLabel:has(.radioInput:checked) {
@@ -151,5 +166,10 @@
   height: 58px;
   border-radius: 12px;
   font-weight: 600;
+
+  @include bp.desktop {
+    margin: 0 auto;
+    width: 320px;
+  }
 }
 // #endregion
