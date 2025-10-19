@@ -1,21 +1,20 @@
-import styles from './styles/styles.module.scss'
+import { IFormValues } from '@/source/pages/project-page/constructor'
+import { ExitButton } from '@/source/shared/ui/exit-button'
 import { Icon } from '@/source/shared/ui/icons'
-import { Controller, SubmitHandler, useForm } from 'react-hook-form'
+import { EIconName } from '@/source/shared/ui/icons/type'
+import { AcceptModal } from '@/source/shared/ui/modals/accept-modal'
 import { numberFormSchema } from '@/source/widgets/phone-form-modal/schema/schema'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { PatternFormat } from 'react-number-format'
-import { typeFormValues } from '@/source/widgets/nav-menu/ui/mortgageUI'
 import { useState } from 'react'
-import { AcceptModal } from '@/source/shared/ui/modals/accept-modal'
-import { ExitButton } from '@/source/shared/ui/exit-button'
-import { EIconName } from '@/source/shared/ui/icons/type'
+import { Controller, SubmitHandler, useForm } from 'react-hook-form'
+import { PatternFormat } from 'react-number-format'
 import { z } from 'zod'
-import { IFormValues } from '@/source/pages/project-page/constructor'
+import styles from './styles/styles.module.scss'
 
 type FormValues = z.infer<typeof numberFormSchema>
 
 type NumberModalProps = {
-  onClose?(): void
+  onClose?: () => void
   constructor?: IFormValues | null
 }
 
@@ -36,7 +35,7 @@ export const PriceDetailsModal: React.FC<NumberModalProps> = ({ onClose, constru
   })
 
   const onSubmit: SubmitHandler<FormValues> = async data => {
-    console.log(data, constructor)
+    console.log(data)
     const formData = new FormData()
     formData.append('phone', data.phone)
     if (constructor) {

@@ -1,11 +1,9 @@
 import { FC } from 'react'
-import styles from './styles/styles.module.scss'
-import ProjectSlider from './project-slider'
-import ProjectPrice from './project-price'
-import PriceDetails from './price-details'
-import Constructor from './constructor'
-import data from '@/source/shared/api/fake-projects/data.json'
 import { GalleryUI } from '../main-page/ui/gallery'
+import Constructor from './constructor'
+import PriceDetails from './price-details'
+import ProjectPrice from './project-price'
+import ProjectSlider from './project-slider'
 
 type Project = {
   id: string
