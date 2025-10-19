@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import styles from './styles/styles.module.scss'
 import React from 'react'
 import { Icon } from '@/source/shared/ui/icons'
@@ -8,14 +8,21 @@ import { PhoneModal } from '@/source/widgets/phone-form-modal'
 import { Modal } from '@/source/shared/ui/modalUI'
 
 export const HeaderUI: React.FC = () => {
-  const[openModal, setOpenModal] = React.useState<boolean>(false)
+  const [openModal, setOpenModal] = React.useState<boolean>(false)
   return (
     <header className={styles.container}>
-      <Icon className={styles.logo} icon={EIconName.Logo}   />
+      <Icon className={styles.logo} icon={EIconName.Logo} />
       <NavMenuDesktop />
       <div className={styles.desktopWrapper}>
         <div className={styles.contacts}>
-          <button onClick={()=>{setOpenModal(true)}} className={styles.button}><p>Заказать звонок</p></button>
+          <button
+            onClick={() => {
+              setOpenModal(true)
+            }}
+            className={styles.button}
+          >
+            <p>Заказать звонок</p>
+          </button>
           <a href="tel:+74951839288">+7 (495) 183 92 88</a>
         </div>
         <div className={styles.iconsContainer}>
@@ -25,7 +32,7 @@ export const HeaderUI: React.FC = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://wa.me/79274534893?text=Здравствуйте! Здравствуйте! Хочу получить консультацию по инвестициям в ТопДом"
+            href="https://wa.me/79274534893?text=Здравствуйте! Хочу получить консультацию"
           >
             <div className={styles.whatsIcon}></div>
           </a>
@@ -38,7 +45,7 @@ export const HeaderUI: React.FC = () => {
         </div>
       </div>
       <Modal onOpenChange={setOpenModal} open={openModal}>
-        <PhoneModal info={"srd"}  onClose={() => setOpenModal(false)} />
+        <PhoneModal info={'srd'} onClose={() => setOpenModal(false)} />
       </Modal>
     </header>
   )

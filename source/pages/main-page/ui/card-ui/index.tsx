@@ -3,10 +3,6 @@ import styles from './styles/styles.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Image from 'next/image'
 import basketIcon from '@/public/ui-icons/Корзинка.svg'
-import homeImage from '@/public/test-vilages-image/home.png'
-import testImage from '@/public/test-vilages-image/3.png'
-import testImage2 from '@/public/test-vilages-image/4.png'
-import testImage3 from '@/public/test-vilages-image/Фото дома.png'
 import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -15,25 +11,41 @@ import { HTMLAttributes, useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { EVT, LS_KEY } from '@/source/pages/basket-page/basketGallery'
 
+type BasketItem = {
+  id: string
+  images: string[]
+}
+
 export type TVillageProps = HTMLAttributes<HTMLDivElement> & {
+  id: string
+  images: string[]
   onBasket?: boolean
 }
-export const VillageCard = ({ onBasket }: TVillageProps) => {
-  const [count, setCount] = useState(0)
-  // это будет огромный технический долг, с виджетом корзины
+
+export const ProjectCard = ({ onBasket, id, images }: TVillageProps) => {
+  const [items, setItems] = useState<BasketItem[]>([])
+
   useEffect(() => {
     const read = () => {
-      const n = Number(localStorage.getItem(LS_KEY) || 0)
-      setCount(Number.isFinite(n) && n > 0 ? n : 0)
+      try {
+        const stored = localStorage.getItem(LS_KEY)
+        const parsed: BasketItem[] = stored ? JSON.parse(stored) : []
+        setItems(parsed)
+      } catch (e) {
+        console.error('Failed to parse basket items from localStorage', e)
+        setItems([])
+      }
     }
+
     read()
 
     const onStorage = (e: StorageEvent) => {
       if (e.key === LS_KEY) read()
     }
+
     const onLocal = (e: Event) => {
-      const next = (e as CustomEvent<number>).detail
-      setCount(Number(next) || 0)
+      const next = (e as CustomEvent<BasketItem[]>).detail
+      setItems(next || [])
     }
 
     window.addEventListener('storage', onStorage)
@@ -44,45 +56,50 @@ export const VillageCard = ({ onBasket }: TVillageProps) => {
     }
   }, [])
 
-  const setAndBroadcast = (next: number) => {
-    localStorage.setItem(LS_KEY, String(next))
-    window.dispatchEvent(new CustomEvent(EVT, { detail: next }))
-    setCount(next)
+  const setAndBroadcast = (nextItems: BasketItem[]) => {
+    try {
+      localStorage.setItem(LS_KEY, JSON.stringify(nextItems))
+      window.dispatchEvent(new CustomEvent(EVT, { detail: nextItems }))
+    } catch (e) {
+      console.error('Failed to save basket items to localStorage', e)
+    }
   }
 
-  // ADD внутри карточки
   const addToBasket = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    e.stopPropagation() // чтобы <Link> не сработал
-    setAndBroadcast(count + 1)
+    e.stopPropagation()
+    const newItems = [...items, { id, images }]
+    setAndBroadcast(newItems)
   }
 
-  // REMOVE внутри карточки
   const removeFromBasket = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     e.stopPropagation()
-    setAndBroadcast(Math.max(0, count - 1))
+    // Удаляем первый попавшийся элемент с таким id
+    const index = items.findIndex(item => item.id === id)
+    if (index !== -1) {
+      const newItems = [...items]
+      newItems.splice(index, 1)
+      setAndBroadcast(newItems)
+    }
   }
 
   return (
-    <Link href="/project">
+    <Link href={`/project/${id}`}>
       <div className={styles.container}>
         <Swiper className={styles.swiper} modules={[Pagination]} pagination={{ clickable: false }} loop>
-          <SwiperSlide>
-            <Image className={styles.image} src={homeImage} alt="" unoptimized />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image className={styles.image} src={testImage} alt="" unoptimized />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image className={styles.image} src={testImage2} alt="" unoptimized />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image className={styles.image} src={testImage3} alt="" unoptimized />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image className={styles.image} src={testImage} alt="" unoptimized />
-          </SwiperSlide>
+          {images.map((img, idx) => (
+            <SwiperSlide key={idx}>
+              <Image
+                className={styles.image}
+                src={img}
+                alt={`Project ${id} image ${idx}`}
+                width={171}
+                height={135}
+                unoptimized
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
         <div className={styles.optionsWrapper}>
           <p>Хит продаж</p>
@@ -91,7 +108,7 @@ export const VillageCard = ({ onBasket }: TVillageProps) => {
             onClick={e => addToBasket(e)}
             className={clsx(styles.basketButton, onBasket && styles.disabled)}
           >
-            <Image className={styles.basketIcon}  src={basketIcon} alt="" unoptimized />
+            <Image className={styles.basketIcon} src={basketIcon} alt="" unoptimized />
           </button>
         </div>
         {onBasket && <button className={styles.deleteButton} onClick={e => removeFromBasket(e)}></button>}

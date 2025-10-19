@@ -1,0 +1,155 @@
+// #region constructor
+.accordionRoot {
+  margin-top: 14px;
+  margin-bottom: 40px;
+  padding: 10px 14px;
+  padding-bottom: 18px;
+
+  background-color: var(--color-neutral1);
+  border-radius: 15px;
+}
+
+.accordionTrigger {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  background-color: var(--color-neutral1);
+  text-align: left;
+}
+
+.triggerContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.accordionChevron {
+  width: 48px;
+  height: 48px;
+
+  color: var(--color-neutral8);
+}
+
+.title {
+  display: block;
+  margin-bottom: 5px;
+
+  font-size: var(--font-size-mob-xl);
+  color: var(--color-fg);
+}
+
+.priceTitle {
+  display: block;
+
+  font-size: var(--font-size-mob-l);
+  color: var(--color-neutral2);
+}
+
+.accordionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+
+  margin-top: 20px;
+}
+
+.accordionList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.accordionItem {
+  padding: 15px 20px;
+  padding-bottom: 24px;
+
+  border-radius: 14px;
+  background-color: hsla(215, 56%, 32%, 0.059);
+}
+
+.accordionItemTitle {
+  display: block;
+  margin-bottom: 21px;
+
+  font-size: var(--font-size-mob-l);
+  color: var(--color-neutral8);
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--font-size-mob-l);
+  line-height: 20px;
+  color: var(--color-neutral3);
+  text-wrap: nowrap;
+
+  cursor: pointer;
+}
+
+.radioLabel:has(.radioInput:checked) {
+  color: rgba(0, 0, 0, 0.8);
+}
+.radioInput {
+  appearance: none;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  transition: 500ms;
+  background-color: #d8dee6;
+}
+
+.radioInput:focus-visible {
+  outline: 2px solid var(--button-border-gradient);
+}
+
+.radioInput:checked {
+  background-image: var(--gradient-checkbox);
+  transition: 500ms;
+}
+
+.radioInput::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  font-size: 30px;
+  background-image: url('#{$base}/ui-icons/checked.svg');
+  background-repeat: no-repeat;
+  transition: 500ms;
+  background-position: center;
+}
+
+.radioInput:disabled {
+  opacity: 0;
+}
+.radioLabel:has(.radioInput:disabled) {
+  opacity: 0;
+}
+
+.button {
+  background: var(--button-gradient);
+  border: none;
+  outline: none;
+  color: var(--color-neutral1);
+  font-size: var(--font-size-mob-xl);
+  width: 100%;
+  height: 58px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+// #endregion

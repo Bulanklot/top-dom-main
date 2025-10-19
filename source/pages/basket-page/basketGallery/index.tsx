@@ -2,30 +2,40 @@
 
 import styles from './styles/styles.module.scss'
 import { useEffect, useState } from 'react'
-import { VillageCard } from '@/source/pages/main-page/ui/card-ui'
+import { ProjectCard } from '@/source/pages/main-page/ui/card-ui'
 
-export const LS_KEY = 'basketCount' // ключ в localStorage
-export const EVT = 'basket:count'
+export const LS_KEY = 'basketItems' // ключ в localStorage
+export const EVT = 'basket:items'
+
+type BasketItem = {
+  id: string
+  images: string[]
+}
 
 export const BasketGallery = () => {
-  const [count, setCount] = useState(0)
+  const [items, setItems] = useState<BasketItem[]>([])
+
   useEffect(() => {
     const read = () => {
-      const n = Number(localStorage.getItem(LS_KEY) || 0)
-      setCount(Number.isFinite(n) && n > 0 ? n : 0)
+      try {
+        const stored = localStorage.getItem(LS_KEY)
+        const parsed: BasketItem[] = stored ? JSON.parse(stored) : []
+        setItems(parsed)
+      } catch (e) {
+        console.error('Failed to parse basket items from localStorage', e)
+        setItems([])
+      }
     }
 
     read()
 
-    // Обновления из ДРУГИХ вкладок
     const onStorage = (e: StorageEvent) => {
       if (e.key === LS_KEY) read()
     }
 
-    // Обновления в ЭТОЙ же вкладке (после добавления/удаления)
     const onBasket = (e: Event) => {
-      const next = (e as CustomEvent<number>).detail
-      setCount(Number(next) || 0)
+      const next = (e as CustomEvent<BasketItem[]>).detail
+      setItems(next || [])
     }
 
     window.addEventListener('storage', onStorage)
@@ -38,8 +48,15 @@ export const BasketGallery = () => {
 
   return (
     <div className={styles.container}>
-      {count > 0 ? (
-        Array.from({ length: count }).map((_, index) => <VillageCard key={index} onBasket />)
+      {items.length > 0 ? (
+        items.map((item, index) => (
+          <ProjectCard
+            key={`${item.id}-${index}`} // Уникальный ключ
+            id={item.id}
+            images={item.images}
+            onBasket={true}
+          />
+        ))
       ) : (
         <p className={styles.comment}>Здесь будет дом вашей мечты</p>
       )}

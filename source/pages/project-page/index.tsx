@@ -1,22 +1,33 @@
-import { FC } from "react";
-import styles from "./styles/styles.module.scss";
-import ProjectSlider from "./project-slider";
-import ProjectPrice from "./project-price";
-import projectSlide1 from "@/public/project/slider/project-slide-1.jpg";
-import PriceDetails from "./price-details";
+import { FC } from 'react'
+import styles from './styles/styles.module.scss'
+import ProjectSlider from './project-slider'
+import ProjectPrice from './project-price'
+import PriceDetails from './price-details'
+import Constructor from './constructor'
+import data from '@/source/shared/api/fake-projects/data.json'
+import { GalleryUI } from '../main-page/ui/gallery'
 
-const IMAGES = [projectSlide1.src, projectSlide1.src, projectSlide1.src]
+type Project = {
+  id: string
+  name: string
+  images: string[]
+}
 
-export const ProjectPage: FC = () => {
-    return (
-        <>
-            <ProjectSlider images={IMAGES} />
-            <ProjectPrice startPrice={19500000} oldPrice={20500000} discountPrice={500000} />
-            <PriceDetails />
+interface IProjectPageProps {
+  project: Project
+}
 
-            <div className={styles.container}>
-            </div>
+export const ProjectPage: FC<IProjectPageProps> = props => {
+  const { project } = props
 
-        </>
-    )
+  return (
+    <>
+      <ProjectSlider images={project.images} />
+      <ProjectPrice startPrice={19500000} oldPrice={20500000} discountPrice={500000} />
+      <PriceDetails />
+      <Constructor />
+
+      <GalleryUI />
+    </>
+  )
 }

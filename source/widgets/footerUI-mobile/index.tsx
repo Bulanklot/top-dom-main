@@ -47,7 +47,7 @@ export const FooterUIMobile: React.FC = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://wa.me/79274534893?text=Здравствуйте! Здравствуйте! Хочу получить консультацию по инвестициям в ТопДом"
+          href="https://wa.me/79274534893?text=Здравствуйте! Хочу получить консультацию"
         >
           <Image unoptimized src={whatsLogo} alt="Ватсап" />
         </a>
