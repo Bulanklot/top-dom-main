@@ -28,7 +28,7 @@ export const ProjectCard = ({ onBasket, id, images }: TVillageProps) => {
   // преобразовываю фотки для тестового сервера
   const preparedImages = images.map((image, i) => {
     if (!basePath) return image
-    return basePath ? `${basePath}${image}` : image
+    return basePath ? `${basePath}/public/${image}` : image
   })
 
   useEffect(() => {
