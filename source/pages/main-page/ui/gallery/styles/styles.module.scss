@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 25px;
   padding: 0 20px;
-  @include bp.desktop {
+  @include bp.desktop{
     align-items: center;
     gap: 30px;
   }
@@ -17,22 +17,17 @@
   column-gap: 8px;
   align-items: center;
   justify-content: start;
-  @include bp.desktop {
+  @include bp.desktop{
     column-gap: 21px;
     row-gap: 24px;
-  }
-
-  @include bp.desktop-1200 {
-    width: 1200px;
-    margin: 0 auto;
-    column-gap: 41px;
+    justify-content: center;
   }
 }
 
 .title {
   font-size: var(--font-size-mob-xxl);
-  @include bp.desktop {
-    font-size: var(--font-size-xxxl);
+  @include bp.desktop{
+    font-size:var(--font-size-xxxl);
   }
 }
 
@@ -44,10 +39,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  @media (width>= 400px) {
+  @media  (width>= 400px) {
     display: none;
   }
-  @include bp.desktop {
-    display: none;
+  @include bp.desktop{
+    display:none;
   }
 }
