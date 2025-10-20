@@ -3,8 +3,8 @@ import styles from './styles/styles.module.scss'
 import { ProjectCard } from '@/source/pages/main-page/ui/card-ui'
 
 export const GalleryUI = async () => {
-  const projects = await getAllProjects()
-  console.log(projects)
+  const projects = await getAllProjects();
+
 
   return (
     <div className={styles.container}>
