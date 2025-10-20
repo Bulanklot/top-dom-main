@@ -12,12 +12,16 @@
     height: 330px;
   }
 }
-
+.swiperWrapper .swiper {
+  padding-bottom: 10px;
+  @include bp.desktop {
+    padding-bottom: 20px;
+  }
+}
 .swiper {
   width: 100%;
   border-radius: 15px 15px 0 0;
   --swiper-pagination-bottom: 0px;
-  padding-bottom: 10px;
   --swiper-pagination-theme-color: #f0f0f0;
   --swiper-pagination-bullet-inactive-color: #f0f0f0;
   --swiper-pagination-bullet-inactive-opacity: 1;
@@ -28,7 +32,6 @@
   @include bp.desktop {
     --swiper-pagination-bullet-size: 11px;
     --swiper-pagination-bullet-height: 11px;
-    padding-bottom: 20px;
   }
 }
 
@@ -111,7 +114,6 @@
 }
 
 .image {
-  object-fit: cover;
   @include bp.desktop {
     width: 269px;
     height: 217px;
@@ -119,6 +121,10 @@
 }
 
 .basketIcon {
-  width: 50px;
-  height: 50px;
+  width: 33px;
+  height: 33px;
+  @include bp.desktop {
+    width: 50px;
+    height: 50px;
+  }
 }
