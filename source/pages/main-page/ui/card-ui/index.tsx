@@ -92,18 +92,20 @@ export const ProjectCard = ({ onBasket, id, images }: TVillageProps) => {
       <div className={styles.container}>
         <div className={styles.swiperWrapper}>
           <Swiper className={styles.swiper} modules={[Pagination]} pagination={{ clickable: false }} loop>
-            {images.map((img, idx) => (
+            {images.map((img, idx) => {
+                const imageSource = `/top-dom-main${img}`
+                return(
               <SwiperSlide key={idx}>
                 <Image
                   className={styles.image}
-                  src={img}
+                  src={imageSource}
                   alt={`Project ${id} image ${idx}`}
                   width={171}
                   height={135}
                   unoptimized
                 />
-              </SwiperSlide>
-            ))}
+              </SwiperSlide>)
+            })
           </Swiper>
         </div>
         <div className={styles.optionsWrapper}>
