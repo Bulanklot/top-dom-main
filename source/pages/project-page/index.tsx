@@ -20,7 +20,7 @@ export const ProjectPage: FC<IProjectPageProps> = props => {
   const { project } = props
 
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.projectContainer}>
         <ProjectSlider images={project.images} />
         <ProjectPrice startPrice={19500000} oldPrice={20500000} discountPrice={500000} />
@@ -32,6 +32,6 @@ export const ProjectPage: FC<IProjectPageProps> = props => {
       </div>
 
       <GalleryUI />
-    </>
+    </div>
   )
 }
