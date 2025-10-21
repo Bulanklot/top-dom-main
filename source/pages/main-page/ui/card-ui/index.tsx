@@ -105,7 +105,7 @@ export const ProjectCard = ({ onBasket, id, images }: TVillageProps) => {
                   unoptimized
                 />
               </SwiperSlide>)
-            })
+            })}
           </Swiper>
         </div>
         <div className={styles.optionsWrapper}>
