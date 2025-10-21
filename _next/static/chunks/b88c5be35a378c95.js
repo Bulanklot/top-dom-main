@@ -1,1 +1,0 @@
-(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,83494,t=>{t.v("/top-dom-main/_next/static/media/Корзинка.c13ca364.svg")}]);

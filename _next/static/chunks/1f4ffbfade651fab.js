@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,83494,t=>{t.v("/_next/static/media/Корзинка.c13ca364.svg")},72225,t=>{"use strict";t.s(["Autoplay",()=>c.default]);var c=t.i(20519)}]);
