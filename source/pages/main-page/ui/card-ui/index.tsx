@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { HTMLAttributes, useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { EVT, LS_KEY } from '@/source/pages/basket-page/basketGallery'
+import {useRouter} from "next/router";
 
 type BasketItem = {
   id: string
@@ -25,6 +26,7 @@ export type TVillageProps = HTMLAttributes<HTMLDivElement> & {
 export const ProjectCard = ({ onBasket, id, images }: TVillageProps) => {
   const [items, setItems] = useState<BasketItem[]>([])
   // преобразовываю фотки для тестового сервера
+
 
   useEffect(() => {
     const read = () => {
@@ -94,7 +96,7 @@ export const ProjectCard = ({ onBasket, id, images }: TVillageProps) => {
               <SwiperSlide key={idx}>
                 <Image
                   className={styles.image}
-                  src={img}
+                  src={`img`}
                   alt={`Project ${id} image ${idx}`}
                   width={171}
                   height={135}
