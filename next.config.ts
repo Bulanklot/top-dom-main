@@ -7,6 +7,7 @@ const repo = 'top-dom-main'
 const nextConfig: NextConfig = {
   output: 'export', 
   basePath: isProd ? `/${repo}` : '',
+  // assetPrefix: isProd ? `/${repo}/` : '',
   // basePath: isProd ? `` : '',
   images: { unoptimized: true },
   sassOptions: {

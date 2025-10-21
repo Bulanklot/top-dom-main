@@ -100,7 +100,7 @@ export const ProjectCard = ({ onBasket, id, images }: TVillageProps) => {
               <SwiperSlide key={idx}>
                 <Image
                   className={styles.image}
-                  src={`${img}`}
+                  src={img}
                   alt={`Project ${id} image ${idx}`}
                   width={171}
                   height={135}
