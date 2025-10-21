@@ -25,10 +25,6 @@ export type TVillageProps = HTMLAttributes<HTMLDivElement> & {
 
 export const ProjectCard = ({ onBasket, id, images }: TVillageProps) => {
   const [items, setItems] = useState<BasketItem[]>([])
-  const onGithubImages = images.map((image, i) => {
-    const repoName = 'top-dom-main';
-    return `${repoName}/${image}`;
-  })
   // преобразовываю фотки для тестового сервера
 
 
@@ -96,7 +92,7 @@ export const ProjectCard = ({ onBasket, id, images }: TVillageProps) => {
       <div className={styles.container}>
         <div className={styles.swiperWrapper}>
           <Swiper className={styles.swiper} modules={[Pagination]} pagination={{ clickable: false }} loop>
-            {onGithubImages.map((img, idx) => (
+            {images.map((img, idx) => (
               <SwiperSlide key={idx}>
                 <Image
                   className={styles.image}
