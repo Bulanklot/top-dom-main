@@ -24,12 +24,7 @@ export type TVillageProps = HTMLAttributes<HTMLDivElement> & {
 
 export const ProjectCard = ({ onBasket, id, images }: TVillageProps) => {
   const [items, setItems] = useState<BasketItem[]>([])
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
   // преобразовываю фотки для тестового сервера
-  const preparedImages = images.map((image, i) => {
-    if (!basePath) return image
-    return basePath ? `${basePath}/public/${image}` : image
-  })
 
   useEffect(() => {
     const read = () => {
@@ -95,7 +90,7 @@ export const ProjectCard = ({ onBasket, id, images }: TVillageProps) => {
       <div className={styles.container}>
         <div className={styles.swiperWrapper}>
           <Swiper className={styles.swiper} modules={[Pagination]} pagination={{ clickable: false }} loop>
-            {preparedImages.map((img, idx) => (
+            {images.map((img, idx) => (
               <SwiperSlide key={idx}>
                 <Image
                   className={styles.image}

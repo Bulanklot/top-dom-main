@@ -10,6 +10,7 @@
   @include bp.desktop {
     width: 269px;
     height: 330px;
+    gap: 12px;
   }
 }
 .swiperWrapper .swiper {
@@ -39,7 +40,6 @@
   display: flex;
   flex-direction: column;
   padding-left: 8px;
-  gap: 3px;
   p:nth-child(1) {
     font-size: var(--font-size-mob-l);
     font-weight: bold;
@@ -47,8 +47,11 @@
   }
   p:nth-child(2) {
     color: var(--color-neutral2);
+    font-size: var(--font-size-mob-xs);
   }
   @include bp.desktop {
+    padding-left: 13px;
+    gap: 2px;
     p:nth-child(1) {
       font-size: var(--font-size-xl);
     }
@@ -61,7 +64,7 @@
 .optionsWrapper {
   position: absolute;
   padding: 0 5px;
-  bottom: 70px;
+  bottom: 66px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -81,11 +84,13 @@
   }
 
   @include bp.desktop {
-    bottom: 92px;
+    bottom: 90px;
+    padding: 0 11px;
     p {
       font-size: var(--font-size-s);
       width: 102px;
       height: 29px;
+      margin-top: -7px;
     }
   }
 }
@@ -95,6 +100,9 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  @include bp.desktop {
+    //padding-top:7px;
+  }
 }
 
 .disabled {
@@ -110,7 +118,8 @@
   z-index: 1;
   width: 30px;
   height: 30px;
-  background-image: url('#{$base}/test-vilages-image/card-exit-button.svg');
+  background-image: url('/test-vilages-image/card-exit-button.svg');
+
 }
 
 .image {

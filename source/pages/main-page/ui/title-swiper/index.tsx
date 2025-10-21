@@ -13,7 +13,6 @@ export const SwiperUI = () => {
       loop={true}
       effect="coverflow"
       centeredSlides={true}
-      spaceBetween={7}
       autoplay={{
         delay: 6000,
         disableOnInteraction: false,
@@ -29,8 +28,7 @@ export const SwiperUI = () => {
       }}
       breakpoints={{
         0: {
-          slidesPerView: 1.2,
-          spaceBetween: 7
+          slidesPerView: 1.1,
         },
         1024: {
           slidesPerView: 1.4,
