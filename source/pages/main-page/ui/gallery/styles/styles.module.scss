@@ -16,7 +16,7 @@
   row-gap: 12px;
   column-gap: 8px;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   @include bp.desktop{
     column-gap: 21px;
     row-gap: 24px;

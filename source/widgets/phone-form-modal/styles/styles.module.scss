@@ -1,5 +1,4 @@
 .container {
-
   padding: 31px 28px 40px;
   width: 350px;
   min-height: 365px;
@@ -8,16 +7,16 @@
   flex-direction: column;
   align-items: start;
   gap: 29px;
-  @include bp.desktop{
+  @include bp.desktop {
     width: 466px;
     min-height: 419px;
     justify-content: space-between;
   }
 }
 
-.exitButtonWrapper{
-  width:40px;
-  height:40px;
+.exitButtonWrapper {
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +25,7 @@
   background-color: transparent;
 }
 
-.iconsContainer{
+.iconsContainer {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -34,23 +33,22 @@
 
 .title {
   font-size: 22px;
-  @include bp.desktop{
+  @include bp.desktop {
     font-size: 24px;
     font-weight: 600;
   }
-
 }
 
-.description{
+.description {
   font-size: 14px;
   color: var(--color-neutral7);
-  @include bp.desktop{
+  @include bp.desktop {
     font-size: 15px;
   }
 }
 
 .editWrapper {
-  width:40px;
+  width: 40px;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -58,32 +56,31 @@
   box-sizing: border-box;
 }
 
-.input{
+.input {
   width: 100%;
   background-color: var(--color-neutral6);
   border: none;
   outline: none;
-  min-height:40px;
+  min-height: 40px;
   border-radius: 17px;
   padding-left: 12px;
   font-size: 15px;
 
-  &::placeholder{
+  &::placeholder {
     color: rgba(133, 133, 133, 0.65);
     font-size: 12px;
-
   }
-  @include bp.desktop{
+  @include bp.desktop {
     min-height: 50px;
-    &::placeholder{
+    &::placeholder {
       font-size: 14px;
     }
   }
 }
 
-.error{
+.error {
   font-size: var(--font-size-mob-xs);
-  color: #F00;
+  color: #f00;
   min-height: 28px;
   padding-left: 12px;
   width: 100%;
@@ -96,7 +93,7 @@
   width: 100%;
 }
 
-.button{
+.button {
   width: 259px;
   height: 56px;
   border-radius: 16px;
@@ -105,20 +102,20 @@
   background: var(--button-gradient);
   align-self: center;
   cursor: pointer;
-  &:disabled{
-    background:rgba(36, 74, 127, 0.06);
-    color: #BCBCBC;
+  &:disabled {
+    background: rgba(36, 74, 127, 0.06);
+    color: #bcbcbc;
     cursor: not-allowed;
   }
 }
 
-.titleWrapper{
+.titleWrapper {
   display: flex;
   flex-direction: column;
   gap: 11px;
 }
 
-.form{
+.form {
   width: 100%;
   display: flex;
   flex-direction: column;
