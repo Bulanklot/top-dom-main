@@ -47,12 +47,12 @@ export const PhoneModal: React.FC<PhoneModalProps> = ({ onClose, info }: PhoneMo
     reset()
     setComplete(true)
     try {
-      await fetch("/send.php", {
-        method: "POST",
-        body: formData,
-      });
+      await fetch('/send.php', {
+        method: 'POST',
+        body: formData
+      })
     } catch (error) {
-      console.error("Ошибка отправки формы:", error);
+      console.error('Ошибка отправки формы:', error)
     }
   }
 
