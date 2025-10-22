@@ -6,12 +6,13 @@ import { EIconName } from '@/source/shared/ui/icons/type'
 import { NavMenuDesktop } from '@/source/widgets/nav-menu/nav-menuDesktop'
 import { PhoneModal } from '@/source/widgets/phone-form-modal'
 import { Modal } from '@/source/shared/ui/modalUI'
+import Link from 'next/link'
 
 export const HeaderUI: React.FC = () => {
   const [openModal, setOpenModal] = React.useState<boolean>(false)
   return (
     <header className={styles.container}>
-      <Icon className={styles.logo} icon={EIconName.Logo} />
+      <Link className={styles.logo} href="/"><Icon icon={EIconName.Logo} /></Link>
       <NavMenuDesktop />
       <div className={styles.desktopWrapper}>
         <div className={styles.contacts}>

@@ -1,10 +1,23 @@
 .container {
   padding: 10px 0;
-  @include bp.desktop{
-    padding: 15px 120px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @include bp.desktop {
+    padding: 15px 0;
+    max-width: 1200px;
   }
 }
 
+.logoLink{
+  display: block;
+}
+
+.swiper{
+  width: 100%;
+  max-width: 100dv;
+  margin: 0 auto;
+}
 
 // #region project-slider
 .sliderContainer {
@@ -27,6 +40,11 @@
 
 .thumbsSwiper {
   display: none;
+}
+
+.slide{
+  width: 100%;
+  max-width: 100%;
 }
 
 .sliderImg {

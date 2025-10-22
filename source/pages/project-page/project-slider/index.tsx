@@ -43,7 +43,7 @@ const ProjectSlider: FC<IProjectSliderProps> = props => {
         modules={[FreeMode, Navigation, Thumbs, Autoplay]}
       >
         {images.map((image, index) => (
-          <SwiperSlide key={`${image}-${index}`}>
+          <SwiperSlide className={styles.slide} key={`${image}-${index}`}>
             <Image src={image} width={200} height={200} alt="" className={styles.sliderImg} />
           </SwiperSlide>
         ))}

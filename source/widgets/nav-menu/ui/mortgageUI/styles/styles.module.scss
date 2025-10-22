@@ -9,6 +9,14 @@
   width: 100%;
   @include bp.desktop{
    align-items: center;
+    min-height: 229px;
+    padding:0 0 18px 0;
+  }
+}
+
+.phoneIcon{
+  @include bp.desktop{
+    display: none;
   }
 }
 
@@ -46,6 +54,9 @@
   height: 58px;
   border-radius: 12px;
   font-weight: 600;
+  @include bp.desktop{
+    height: 41px;
+  }
 }
 
 .radioLabel {
@@ -99,4 +110,10 @@
 }
 .radioLabel:has(.radioInput:disabled) {
   opacity: 0;
+}
+
+.phoneIcon{
+  @include bp.desktop{
+    display: none;
+  }
 }

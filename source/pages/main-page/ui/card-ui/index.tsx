@@ -10,7 +10,6 @@ import Link from 'next/link'
 import { HTMLAttributes, useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { EVT, LS_KEY } from '@/source/pages/basket-page/basketGallery'
-import {useRouter} from "next/router";
 
 type BasketItem = {
   id: string

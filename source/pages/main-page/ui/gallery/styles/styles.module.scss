@@ -28,6 +28,7 @@
   font-size: var(--font-size-mob-xxl);
   @include bp.desktop{
     font-size:var(--font-size-xxxl);
+    align-self: center;
   }
 }
 

@@ -9,7 +9,7 @@ export const AcceptModal = ({ onClose }) => {
   return (
     <div className={styles.container}>
       <div className={styles.headerContainer}>
-        <Icon icon={EIconName.Logo} />
+        <Icon className={styles.acceptLogo} icon={EIconName.Logo} />
         <ExitButton onClose={onClose} />
       </div>
       <p className={styles.description}>
