@@ -1,0 +1,29 @@
+{
+  "banners": [
+    {
+      "title": "Самый выгодный проект",
+      "buttonText": "Рассчитать стоимость дома",
+      "titleColor": "rgba(255, 255, 255, 1)",
+      "imageSrc": "/title-cards-image/slide1.png"
+    },
+    {
+      "title": "Помощь \nв одобрении\n ипотеки",
+      "buttonText": "Узнать подробнее",
+      "titleColor": "rgba(255, 255, 255, 1)",
+      "imageSrc": "/title-cards-image/slide2.png"
+    },
+    {
+      "title": "Рассрочка \nна строительство",
+      "buttonText": "Узнать подробнее",
+      "titleColor": "rgba(82, 38, 24, 1)",
+      "description": "И покупку дома",
+      "imageSrc": "/title-cards-image/slide3.png"
+    },
+    {
+      "title": "Заказать звонок",
+      "buttonText": "Заказать",
+      "titleColor": "rgba(65, 65, 65, 1)",
+      "imageSrc": "/title-cards-image/slide4.svg"
+    }
+  ]
+}
