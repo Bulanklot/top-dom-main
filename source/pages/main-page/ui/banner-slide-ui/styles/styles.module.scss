@@ -1,49 +1,47 @@
 .container {
-  background-image:
-    url('#{$base}/title-cards-image/homeImage.png'), linear-gradient(95deg, #26adfe 22.22%, #005be5 129.04%);
   min-height: 277px;
   background-repeat: no-repeat;
   border-radius: 24px;
-  background-position: left center;
+  background-position: center;
+  background-size: cover;
   position: relative;
-  padding: 17px 0 13px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  padding: 17px 10px 13px;
 
   @include bp.desktop{
     min-height: 431px;
-    padding-top: 10px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    padding-top: 19px;
+    padding-bottom: 14px;
   }
 
 }
 
 .title {
   font-size: var(--font-size-mob-xxxl);
-  line-height: 40px;
   font-weight: 900;
-  color: var(--color-neutral1);
+  padding-left: 10px;
+  text-shadow: 0 3px 4px 0 rgba(6, 50, 116, 0.2);
+  white-space: pre-line;
+  line-height: 100%;
   span {
     display: block;
   }
   @include bp.desktop{
     font-size: var(--font-size-xxxxl);
-    line-height: 70px;
   }
 }
 
 .descriptionWrapper {
-  background-color: #107cef;
-  width: 206px;
+  background: linear-gradient(90deg, #FF9D00 0%, #FFDE5C 100%);
+  width: 191px;
   height: 40px;
   border-radius: 9px 0 0 9px;
   position: absolute;
   right: 0;
-  top: 60px;
+  top: 96px;
   display: flex;
   align-items: center;
   padding-left: 9px;
@@ -51,13 +49,13 @@
     width: 372px;
     height: 59px;
     padding-left: 22px;
-    top: 89px;
+    top: 152px;
   }
 }
 
 .description {
-  color: var(--color-neutral1);
-  font-size: var(--font-size-mob-s);
+  color: rgba(42, 42, 42, 1);
+  font-size: var(--font-size-mob-20px);
   span{
     display: block;
   }
@@ -70,8 +68,6 @@
 
 .button{
   align-self: end;
-  margin-right: 13px;
-  width: 238px;
   height: 43px;
   border: none;
  border-radius: 15px;
@@ -80,6 +76,9 @@
   align-items: center;
   gap: 10px;
   justify-content: center;
+  padding: 0 17px;
+  box-shadow: 04px 4px 0 rgba(15, 107, 202, 0.25),0 4px 4px 0 rgba(0, 0, 0, 0.05) inset;
+
   span{
     background-image: var(--gradient-text) ;
     background-clip: text;
@@ -88,11 +87,14 @@
     font-weight: 600;
   }
   @include bp.desktop{
-    width: 353px;
     height: 62px;
     gap: 20px;
     span{
       font-size: var(--font-size-l);
     }
   }
+}
+
+.link{
+  width: max-content;
 }

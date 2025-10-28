@@ -1,11 +1,11 @@
 import styles from './styles/styles.module.scss'
-import { SwiperUI } from '@/source/pages/main-page/ui/title-swiper'
 import { GalleryUI } from '@/source/pages/main-page/ui/gallery'
 import { FooterUIMobile } from '@/source/widgets/footerUI-mobile'
+import { TitleSwiper } from '@/source/features/title-swiper'
 export const MainPage = () => {
   return (
     <div className={styles.container}>
-      <SwiperUI />
+      <TitleSwiper />
       <GalleryUI />
       <FooterUIMobile />
     </div>

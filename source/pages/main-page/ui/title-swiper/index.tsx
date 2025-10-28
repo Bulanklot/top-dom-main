@@ -3,15 +3,23 @@ import styles from './styles/styles.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
-import { BunnerSlideUI } from '@/source/pages/main-page/ui/swiper-slide-ui'
+import { BannerSlideUI, TBanner } from '@/source/pages/main-page/ui/banner-slide-ui'
 import { Autoplay, EffectCoverflow } from 'swiper/modules'
 
-export const SwiperUI = () => {
+type TSwiperProps = {
+  banners: TBanner[]
+}
+export const SwiperUI: React.FC<TSwiperProps> = props => {
+  const MIN_LOOP_SLIDES = 8;
+  const extended = Array.from(
+    { length: Math.max(MIN_LOOP_SLIDES, props.banners.length) },
+    (_, i) => props.banners[i % props.banners.length]
+  )
   return (
     <Swiper
-      modules={[Autoplay, EffectCoverflow]}
-      loop={true}
+      modules={[Autoplay,EffectCoverflow]}
       effect="coverflow"
+      loop={true}
       centeredSlides={true}
       autoplay={{
         delay: 6000,
@@ -31,36 +39,19 @@ export const SwiperUI = () => {
           slidesPerView: 1.1,
         },
         1024: {
-          slidesPerView: 1.4,
+          slidesPerView: 1.6,
           spaceBetween: 26
         }
       }}
       className={styles.container}
     >
-      <SwiperSlide className={styles.slide}>
-        {' '}
-        <BunnerSlideUI />
-      </SwiperSlide>
-      <SwiperSlide className={styles.slide}>
-        {' '}
-        <BunnerSlideUI />
-      </SwiperSlide>
-      <SwiperSlide className={styles.slide}>
-        {' '}
-        <BunnerSlideUI />
-      </SwiperSlide>
-      <SwiperSlide className={styles.slide}>
-        {' '}
-        <BunnerSlideUI />
-      </SwiperSlide>
-      <SwiperSlide className={styles.slide}>
-        {' '}
-        <BunnerSlideUI />
-      </SwiperSlide>
-      <SwiperSlide className={styles.slide}>
-        {' '}
-        <BunnerSlideUI />
-      </SwiperSlide>
+      {extended.map((banner,index) => {
+        return (
+          <SwiperSlide key={index}>
+            <BannerSlideUI banner={banner} />
+          </SwiperSlide>
+        )
+      })}
     </Swiper>
   )
 }
