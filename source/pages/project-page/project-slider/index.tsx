@@ -58,6 +58,7 @@ const ProjectSlider: FC<IProjectSliderProps> = props => {
         }}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs, Autoplay]}
+        className={styles.slider}
         loop
         navigation
       >

@@ -97,9 +97,10 @@ button:focus {
 
 .swiper-button-next,
 .swiper-button-prev {
-  display: none;
+  display: none !important;
 
   @include bp.desktop {
+    display: flex !important;
     width: 34px;
     height: 34px;
 

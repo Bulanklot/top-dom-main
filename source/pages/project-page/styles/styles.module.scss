@@ -1,9 +1,11 @@
 .container {
-  padding: 10px 0 103px;
+  // padding: 10px 0 103px;
+  padding-bottom: 103px;
   width: 100%;
   display: flex;
   flex-direction: column;
   @include bp.desktop {
+    position: relative;
     padding: 15px 0;
     max-width: 1200px;
   }
@@ -59,6 +61,12 @@
   cursor: pointer;
 }
 
+.slider {
+  @include bp.desktop {
+    border-radius: 15px;
+  }
+}
+
 .slide {
   width: 100%;
   max-width: 100%;
@@ -74,7 +82,6 @@
 
   @include bp.desktop {
     height: 616px;
-    border-radius: 15px;
   }
 }
 
@@ -140,7 +147,9 @@
   border-bottom-right-radius: 24px;
 
   @include bp.desktop {
-    width: 359px;
+    padding: 10px 14px;
+    width: 350px;
+    border-radius: 20px;
   }
 }
 
@@ -226,10 +235,12 @@
 // #endregion
 
 .accordionList {
+  padding: 0 20px;
   @include bp.desktop {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    padding: 0;
   }
   @include bp.desktop-1200 {
     width: 1200px;

@@ -5,6 +5,7 @@ import PriceDetails from './price-details'
 import ProjectPrice from './project-price'
 import ProjectSlider from './project-slider'
 import styles from './styles/styles.module.scss'
+import ConsultBlock from './consult-block'
 
 type Project = {
   id: string
@@ -30,6 +31,8 @@ export const ProjectPage: FC<IProjectPageProps> = props => {
         <PriceDetails />
         <Constructor />
       </div>
+
+      <ConsultBlock />
 
       <GalleryUI />
     </div>
