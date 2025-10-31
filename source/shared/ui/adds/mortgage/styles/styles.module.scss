@@ -1,0 +1,41 @@
+.container {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 91px;
+  border-radius: 15px;
+  background-image: url('#{$base}/adds/add.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: var(--color-neutral1);
+  gap: 37px;
+  @include bp.desktop {
+    min-height: 270px;
+    padding-left: 45px;
+  }
+}
+
+.title {
+  font-size: var(--font-size-mob-xl);
+  font-weight: 700;
+  @include bp.desktop {
+    font-size: 45px;
+  }
+}
+
+.description {
+  font-size: var(--font-size-mob-l);
+  @include bp.desktop {
+    font-size: 24px;
+  }
+}
+
+.buttonWrapper{
+  display: none ;
+  @include bp.desktop{
+    display: flex ;
+  }
+}

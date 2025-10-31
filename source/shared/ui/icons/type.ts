@@ -11,6 +11,7 @@ export const enum EIconName {
   Logo = 'logo',
   ArrowDownAccent = 'arrowDownAccent',
   Rectangle = 'rectangle',
+  ArrowRight = 'arrowRight',
   TgIconHeader = 'tgIconHeader',
   YoutubeIconHeader = 'youtubeIconHeader',
   WhatsappIconHeader = 'whatsappIconHeader',
