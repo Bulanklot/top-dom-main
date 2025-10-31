@@ -1,6 +1,6 @@
 import data from './data.json'
 
-interface IProject {
+export interface IProject {
   id: string
   name: string
   images: string[]

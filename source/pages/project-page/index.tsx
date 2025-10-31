@@ -5,6 +5,7 @@ import PriceDetails from './price-details'
 import ProjectPrice from './project-price'
 import ProjectSlider from './project-slider'
 import styles from './styles/styles.module.scss'
+import { ProjectsGalleryFeature } from '@/source/features/projects-gallery'
 
 type Project = {
   id: string
@@ -31,7 +32,7 @@ export const ProjectPage: FC<IProjectPageProps> = props => {
         <Constructor />
       </div>
 
-      <GalleryUI />
+      <ProjectsGalleryFeature/>
     </div>
   )
 }

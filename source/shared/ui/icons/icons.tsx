@@ -12,6 +12,7 @@ import { WhatsIconHeader } from '@/source/shared/ui/icons/ui/whats-icon-header'
 import { TgIconHeader } from '@/source/shared/ui/icons/ui/tg-icon-header'
 import { VkIconHeader } from '@/source/shared/ui/icons/ui/vk-icon-header'
 import { YoutubeIconHeader } from '@/source/shared/ui/icons/ui/youtube-icon-header'
+import { ArrowRight } from '@/source/shared/ui/icons/ui/arrow-right'
 
 export const ICONS: IconsType = {
     home: HomeIcon,
@@ -27,4 +28,5 @@ export const ICONS: IconsType = {
     tgIconHeader: TgIconHeader,
     vkIconHeader: VkIconHeader,
     youtubeIconHeader: YoutubeIconHeader,
+    arrowRight : ArrowRight
 }
