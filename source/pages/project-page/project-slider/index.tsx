@@ -24,23 +24,43 @@ const ProjectSlider: FC<IProjectSliderProps> = props => {
 
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null)
 
-  // const handleCopy = () => {
-  //   navigator.clipboard.writeText(window.location.href)
-  //   alert('Ссылка на проект скопирована')
-  // }
+  const handleCopy = () => {
+    navigator.clipboard.writeText(window.location.href)
+    alert('Ссылка на проект скопирована')
+  }
 
   return (
     <div className={styles.sliderContainer}>
+    <div className={styles.thumbsSwiper}>
       <Swiper
-        loop={true}
+        onSwiper={setThumbsSwiper}
+        spaceBetween={17}
+        slidesPerView={7}
+        direction="vertical"
+        modules={[FreeMode, Navigation, Thumbs]}
+        watchSlidesProgress
+        freeMode
+        loop
+      >
+        {images.map((image, index) => (
+          <SwiperSlide key={`thumb-${image}-${index}`}>
+            <Image src={image} width={74} height={74} alt="" className={styles.thumbImg} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+    
+      <Swiper
         spaceBetween={0}
-        navigation={false}
         autoplay={{
-          delay: 3000, // Set delay to 3000ms (3 seconds)
-          disableOnInteraction: false // Continue autoplay even after user interaction
+          delay: 3000,
+          disableOnInteraction: false 
         }}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs, Autoplay]}
+        className={styles.slider}
+        loop
+        navigation
       >
         {images.map((image, index) => (
           <SwiperSlide className={styles.slide} key={`${image}-${index}`}>
@@ -49,28 +69,9 @@ const ProjectSlider: FC<IProjectSliderProps> = props => {
         ))}
       </Swiper>
 
-      <div className={styles.thumbsSwiper}>
-        <Swiper
-          onSwiper={setThumbsSwiper}
-          loop={true}
-          spaceBetween={10}
-          slidesPerView={4}
-          freeMode={true}
-          watchSlidesProgress={true}
-          modules={[FreeMode, Navigation, Thumbs]}
-        >
-          {images.map((image, index) => (
-            <SwiperSlide key={`thumb-${image}-${index}`}>
-              <Image src={image} width={50} height={50} alt="" className={styles.sliderImg} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
       <button className={styles.backButton} onClick={() => window.history.back()}></button>
 
-      {/* TODO: раскоментировать, когда будет бэк и https  */}
-      {/* <button className={styles.shareButton} onClick={handleCopy}></button> */}
+      <button className={styles.shareButton} onClick={handleCopy}></button>
     </div>
   )
 }

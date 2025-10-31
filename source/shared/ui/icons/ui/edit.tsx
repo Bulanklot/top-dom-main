@@ -20,8 +20,8 @@ export const Edit: React.FC<SVGProps<SVGSVGElement>> = props => {
           y2="35.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#414141" />
-          <stop offset="1" stop-color="#666666" />
+          <stop stopColor="#414141" />
+          <stop offset="1" stopColor="#666666" />
         </linearGradient>
       </defs>
     </svg>

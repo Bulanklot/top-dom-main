@@ -94,3 +94,57 @@ button {
 button:focus {
   outline: none;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+
+  @include bp.desktop {
+    display: flex !important;
+    width: 34px;
+    height: 34px;
+
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+
+    position: relative;
+
+    &:after {
+      content: '';
+
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 15px;
+      height: 22px;
+
+      background-image: url('/ui-icons/arrow-left-slider.svg');
+      background-position: 0 0;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .swiper-navigation-icon {
+      display: none;
+    }
+  }
+}
+
+.swiper .swiper-button-prev {
+  @include bp.desktop {
+    left: 11px !important;
+  }
+}
+
+.swiper-button-next {
+  @include bp.desktop {
+    right: 11px !important;
+
+    &:after {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
+}

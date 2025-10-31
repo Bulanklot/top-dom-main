@@ -1,19 +1,21 @@
 .container {
-  padding: 10px 0 103px;
+  // padding: 10px 0 103px;
+  padding-bottom: 103px;
   width: 100%;
   display: flex;
   flex-direction: column;
   @include bp.desktop {
-    padding: 15px 0 ;
+    position: relative;
+    padding: 15px 0;
     max-width: 1200px;
   }
 }
 
-.logoLink{
+.logoLink {
   display: block;
 }
 
-.swiper{
+.swiper {
   width: 100%;
   max-width: 100dv;
   margin: 0 auto;
@@ -26,23 +28,46 @@
 
   @include bp.desktop {
     display: flex;
-    gap: 34px;
+    align-items: flex-start;
+    gap: 18px;
 
     max-width: 724px;
     height: 616px;
   }
 
   @include bp.desktop-1200 {
-    max-width: 798px;
-    height: 500px;
+    max-width: 812px;
   }
 }
 
 .thumbsSwiper {
   display: none;
+
+  @include bp.desktop {
+    display: flex;
+
+    height: 616px;
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
-.slide{
+.thumbImg {
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.slider {
+  @include bp.desktop {
+    border-radius: 15px;
+  }
+}
+
+.slide {
   width: 100%;
   max-width: 100%;
 }
@@ -54,6 +79,10 @@
   object-fit: cover;
   object-position: center;
   vertical-align: middle;
+
+  @include bp.desktop {
+    height: 616px;
+  }
 }
 
 .backButton {
@@ -94,7 +123,13 @@
   background-repeat: no-repeat;
 
   z-index: 2;
+
+  @include bp.desktop {
+    top: 11px;
+    right: 9px;
+  }
 }
+
 // #endregion
 
 // #region project-price
@@ -112,7 +147,9 @@
   border-bottom-right-radius: 24px;
 
   @include bp.desktop {
-    width: 359px;
+    padding: 10px 14px;
+    width: 350px;
+    border-radius: 20px;
   }
 }
 
@@ -198,10 +235,12 @@
 // #endregion
 
 .accordionList {
+  padding: 0 20px;
   @include bp.desktop {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    padding: 0;
   }
   @include bp.desktop-1200 {
     width: 1200px;
@@ -221,5 +260,6 @@
     width: 1200px;
     margin: 0 auto;
     margin-top: 38px;
+    margin-bottom: 22px;
   }
 }
